@@ -265,7 +265,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
                 make.width.mas_equalTo(customView.bounds.size.width).priority(MASLayoutPriorityRequired);
             }
             if (customView.bounds.size.height > 0) {
-                make.height.mas_equalTo(customView.bounds.size.height).priority(MASLayoutPriorityRequired);
+                make.height.mas_equalTo(customView.bounds.size.height).priority(MASLayoutPriorityDefaultLow);
             }
         }];
     }
