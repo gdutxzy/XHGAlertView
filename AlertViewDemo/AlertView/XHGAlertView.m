@@ -201,7 +201,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 @interface XHGAlertView (){
     XHGAlertAction * _selectedMenuAction;
 }
-@property (nonatomic,weak)   UIWindow * menuBgWindow;
+@property (nonatomic,weak)   UIWindow * alertBgWindow;
 @property (nonatomic,strong) UIScrollView * scrollView;
 @property (nonatomic,strong) UIView * scrollContentView;
 @property (nonatomic,strong) UIView * bottomView;
@@ -318,14 +318,14 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     // 隐藏上一个alert,如果上一个alert正在进行消失动画，则不处理
     XHGAlertView * alertLast = _alertArray.lastObject;
     if (!alertLast.dismissing) {
-        alertLast.menuBgWindow.hidden = YES;
+        alertLast.alertBgWindow.hidden = YES;
     }
     // 将当前alert加入到alert堆中
     [_alertArray removeObject:self];
     [_alertArray addObject:self];
     
     
-    if (!self.menuBgWindow) {
+    if (!self.alertBgWindow) {
         UIWindow *window = [[UIWindow alloc] initWithFrame:CGRectMake(0,0, KDECEIVE_WIDTH, KDECEIVE_HEIGHT)];
         window.windowLevel = UIWindowLevelAlert;
         window.backgroundColor = colorRGBA(0, 0, 0, 0.5);
@@ -334,7 +334,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
             _widowsDic = [NSMutableDictionary dictionary];
         }
         [_widowsDic setObject:window forKey:[NSString stringWithFormat:@"%p",self]];
-        self.menuBgWindow = window;
+        self.alertBgWindow = window;
         
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(getScaleWidth(305)).priorityHigh();
@@ -345,10 +345,10 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         }];
     }
 
-    self.menuBgWindow.hidden = NO;
-    self.menuBgWindow.alpha = 0;
+    self.alertBgWindow.hidden = NO;
+    self.alertBgWindow.alpha = 0;
     [UIView animateWithDuration:0.3 animations:^{
-        self.menuBgWindow.alpha = 1;
+        self.alertBgWindow.alpha = 1;
     }];
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
     animation.values = @[@0.4,@1.1,@0.96,@1.0];
@@ -365,7 +365,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     self.alpha = 1;
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.menuBgWindow.alpha = 0;
+        self.alertBgWindow.alpha = 0;
         CGAffineTransform transform = CGAffineTransformMakeScale(0.1,0.1);
 //        CGAffineTransformMakeTranslation(0,[UIScreen mainScreen].bounds.size.height/2+30);
 //        transform = CGAffineTransformScale(transform,0.1,0.1);
@@ -374,14 +374,14 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         self.alpha = 0;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
-        self.menuBgWindow.hidden = YES;
+        self.alertBgWindow.hidden = YES;
         [_widowsDic removeObjectForKey:[NSString stringWithFormat:@"%p",self]];
         
         // 从alert堆中移除当前弹窗
         [_alertArray removeObject:self];
         // 显示之前被隐藏的弹窗,如果没有被隐藏，则不作处理
         XHGAlertView * alertLast = _alertArray.lastObject;
-        if (alertLast.menuBgWindow.hidden) {
+        if (alertLast.alertBgWindow.hidden) {
             [alertLast show];
         }
     }];
