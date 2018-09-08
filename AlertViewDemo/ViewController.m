@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XHGAlertView.h"
+#import "ShortcutFuction.h"
 
 @interface ViewController ()
 
@@ -36,12 +37,16 @@
     
     [[XHGAlertView alertWithTitle:@"1" message:nil actions:@[cancleAction,confirmAction]] show];
     [[XHGAlertView alertWithTitle:@"2" message:nil actions:@[confirmAction,cancleAction]] show];
+    [self customViewAlert:nil];
     [[XHGAlertView alertWithTitle:@"3" message:nil actions:@[confirmAction,cancleAction,confirmAction]] show];
     [[XHGAlertView alertWithTitle:@"4" message:nil actions:@[confirmAction,cancleAction]] show];
     [[XHGAlertView alertWithTitle:@"5" message:nil actions:@[cancleAction,confirmAction]] show];
+    [self customViewAlert:nil];
     [[XHGAlertView alertWithTitle:@"6" message:nil actions:@[confirmAction,cancleAction]] show];
     [[XHGAlertView alertWithTitle:@"7" message:nil actions:@[confirmAction,cancleAction,confirmAction]] show];
+    [self customViewAlert:nil];
     [[XHGAlertView alertWithTitle:@"8" message:nil actions:@[confirmAction,cancleAction]] show];
+    [self customViewAlert:nil];
     [[XHGAlertView alertWithTitle:@"9" message:nil actions:@[cancleAction,confirmAction]] show];
 
     
@@ -61,6 +66,22 @@
     XHGAlertView * alert =[XHGAlertView alertWithTitle:[NSString stringWithFormat:@"%ld",index] message:nil actions:@[confirmAction]];
     [alert show];
     
+}
+
+- (IBAction)customViewAlert:(UIButton *)sender {
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"自定义弹窗视图" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor whiteColor];
+    button.frame = CGRectMake(0, 0, 200, 300);
+    [button addTarget:self action:@selector(customViewButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    XHGAlertView * alert = [XHGAlertView alertWithCustomView:button];
+    alert.dismissByTapSpace = YES;
+    [alert show];
+}
+
+- (void)customViewButtonClick:(UIButton *)button{
+    button.backgroundColor = colorRGBA(arc4random()%256, arc4random()%256, arc4random()%256, 1);
 }
 
 - (void)didReceiveMemoryWarning {

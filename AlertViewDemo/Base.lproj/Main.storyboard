@@ -42,6 +42,14 @@
                                     <action selector="oneByOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PRw-6p-wFx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpd-Xs-yh3">
+                                <rect key="frame" x="133" y="352" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="完全自定义弹窗"/>
+                                <connections>
+                                    <action selector="customViewAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubr-nY-UYV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

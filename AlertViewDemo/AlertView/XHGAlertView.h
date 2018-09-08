@@ -39,6 +39,33 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 
 /**
+ 快捷生成常用的标题及内容弹窗
+ @param title 标题，若不填则没有
+ @param message 内容，若不填则没有
+ @param cancelText 取消按钮的文案，若不填则没有
+ @param confirmText 确认按钮的文案，必须填写
+ @param cancelClick 取消按钮按下
+ @param confirmClick 确认按钮按下
+ */
++ (instancetype)alertTitle:(nullable NSString *)title
+                   message:(nullable NSString *)message
+                cancelText:(nullable NSString *)cancelText
+               confirmText:(nonnull NSString *)confirmText
+               cancelClick:(void(^)(void))cancelClick
+              confirmClick:(void(^)(void))confirmClick;
+
+
+
+
+/**
+ 样式完全自定义的弹窗
+ @param customView 自定义视图
+ */
++ (instancetype)alertWithCustomView:(UIView *)customView;
+
+
+
+/**
  标题、内容 弹窗提示
  @param title 标题,如果传nil，则此弹窗不会加载titleLabel，则后续无法设置titleLabel相关属性
  @param message 内容,如果传nil，则此弹窗不会加载messageLabel，则后续无法设置messageLabel相关属性
@@ -90,7 +117,8 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
                           actions:(nonnull NSArray<XHGAlertAction*> *)actions;
 
 
-
+/// 自定义视图
+@property (nonatomic, weak, readonly)   UIView *customView;
 @property (nonatomic, strong) UIImage *topImage;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *message;

@@ -223,6 +223,55 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     NSLog(@">>>>>alert dealloc");
 }
 
++ (instancetype)alertTitle:(nullable NSString *)title
+                   message:(nullable NSString *)message
+                cancelText:(nullable NSString *)cancelText
+               confirmText:(nonnull NSString *)confirmText
+               cancelClick:(void(^)(void))cancelClick
+              confirmClick:(void(^)(void))confirmClick{
+    XHGAlertAction * cancelAction = [XHGAlertAction actionWithTitle:cancelText style:XHGAlertActionStyleGray handler:^(XHGAlertAction *action, XHGAlertView *alertView) {
+        if (cancelClick) {
+            cancelClick();
+        }
+    }];
+    XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:confirmText style:XHGAlertActionStyleHighlight handler:^(XHGAlertAction *action, XHGAlertView *alertView) {
+        if (confirmClick) {
+            confirmClick();
+        }
+    }];
+    NSMutableArray * actions = [NSMutableArray arrayWithCapacity:2];
+    if (cancelText) {
+        [actions addObject:cancelAction];
+        [actions addObject:confirmAction];
+    }else{
+        [actions addObject:confirmAction];
+    }
+    XHGAlertView * alert = [XHGAlertView alertWithTitle:title message:message actions:actions];
+    return alert;
+}
+
+
++ (instancetype)alertWithCustomView:(UIView *)customView{
+    XHGAlertView * alert = [[XHGAlertView alloc] init];
+    if (alert && customView) {
+        [alert addSubview:customView];
+        alert->_customView = customView;
+        alert.dismissByTapSpace = NO;
+        alert.autoDismiss = YES;
+        
+        [customView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+            if (customView.bounds.size.width > 0) {
+                make.width.mas_equalTo(customView.bounds.size.width).priority(MASLayoutPriorityRequired);
+            }
+            if (customView.bounds.size.height > 0) {
+                make.height.mas_equalTo(customView.bounds.size.height).priority(MASLayoutPriorityRequired);
+            }
+        }];
+    }
+    return alert;
+}
+
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray<XHGAlertAction *> *)actions{
     return [XHGAlertView alertWithTopImage:nil title:title message:message menus:nil actions:actions];
@@ -288,7 +337,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         self.menuBgWindow = window;
         
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(getScaleWidth(305));
+            make.width.mas_equalTo(getScaleWidth(305)).priorityHigh();
             make.centerX.mas_equalTo(0);
             make.centerY.mas_equalTo(0);
             make.top.mas_greaterThanOrEqualTo(60);
