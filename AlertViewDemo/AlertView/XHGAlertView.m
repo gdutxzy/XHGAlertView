@@ -329,6 +329,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         UIWindow *window = [[UIWindow alloc] initWithFrame:CGRectMake(0,0, KDECEIVE_WIDTH, KDECEIVE_HEIGHT)];
         window.windowLevel = UIWindowLevelAlert;
         window.backgroundColor = colorRGBA(0, 0, 0, 0.5);
+        [window makeKeyAndVisible];
         [window addSubview:self];
         if (!_widowsDic) {
             _widowsDic = [NSMutableDictionary dictionary];
