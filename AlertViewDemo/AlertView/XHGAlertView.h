@@ -37,7 +37,6 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 @interface XHGAlertView : UIView
 
-
 /**
  快捷生成常用的标题及内容弹窗
  @param title 标题，若不填则没有
@@ -55,15 +54,25 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
               confirmClick:(void(^)(void))confirmClick;
 
 
-
-
 /**
  样式完全自定义的弹窗
- @param customView 自定义视图
+ @param customView 自定义视图，self.customView = customView
  */
 + (instancetype)alertWithCustomView:(UIView *)customView;
 
 
+/**
+ 标题、内容、自定义内容视图 弹窗提示
+ 
+ @param title 标题,如果传nil，则此弹窗不会加载titleLabel，则后续无法设置titleLabel相关属性
+ @param message 内容,如果传nil，则此弹窗不会加载messageLabel，则后续无法设置messageLabel相关属性
+ @param customView 自定义内容视图，self.customView = customView
+ @param actions 操作按钮
+ */
++ (instancetype)alertWithTitle:(nullable NSString *)title
+                       message:(nullable NSString *)message
+          customizeContentView:(nullable UIView *)customView
+                       actions:(nonnull NSArray<XHGAlertAction*> *)actions;
 
 /**
  标题、内容 弹窗提示
@@ -101,20 +110,23 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
                           actions:(nonnull NSArray<XHGAlertAction*> *)actions;
 
 
-
 /**
- 弹窗提示
+ 顶部图片、标题、内容、自定义内容视图、选项 弹窗提示
  @param topImage 顶部图片,如果传nil，则此弹窗不会加载topImageView，则后续无法设置topImageView相关属性
  @param title 标题,如果传nil，则此弹窗不会加载titleLabel，则后续无法设置titleLabel相关属性
  @param message 内容,如果传nil，则此弹窗不会加载messageLabel，则后续无法设置messageLabel相关属性
+ @param customView 自定义内容视图，self.customView = customView
  @param menus 列表单选项
  @param actions 操作按钮
  */
 + (instancetype)alertWithTopImage:(UIImage *)topImage
                             title:(nullable NSString *)title
                           message:(nullable NSString *)message
+             customizeContentView:(nullable UIView *)customView
                             menus:(nullable NSArray<XHGAlertAction*> *)menus
                           actions:(nonnull NSArray<XHGAlertAction*> *)actions;
+
+
 
 
 /// 自定义视图
@@ -133,7 +145,7 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 
 /**
- 设置/获取 选中的列表选项
+ 设置/获取 选中的menus列表选项
  */
 @property (nonatomic, strong) XHGAlertAction * selectedMenuAction;
 

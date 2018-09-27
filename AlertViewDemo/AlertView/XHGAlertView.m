@@ -272,22 +272,34 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     return alert;
 }
 
++ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message customizeContentView:(UIView *)customView actions:(NSArray<XHGAlertAction *> *)actions{
+    return [XHGAlertView alertWithTopImage:nil title:title message:message customizeContentView:customView menus:nil actions:actions];
+}
 
 + (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message actions:(NSArray<XHGAlertAction *> *)actions{
-    return [XHGAlertView alertWithTopImage:nil title:title message:message menus:nil actions:actions];
+    return [XHGAlertView alertWithTopImage:nil title:title message:message customizeContentView:nil menus:nil actions:actions];
 }
 
 + (instancetype)alertWithTitle:(NSString *)title menus:(NSArray<XHGAlertAction *> *)menus actions:(NSArray<XHGAlertAction *> *)actions{
-    return [XHGAlertView alertWithTopImage:nil title:title message:nil menus:menus actions:actions];
+    return [XHGAlertView alertWithTopImage:nil title:title message:nil customizeContentView:nil menus:menus actions:actions];
 }
 
 + (instancetype)alertWithTopImage:(UIImage *)topImage title:(NSString *)title message:(NSString *)message actions:(NSArray<XHGAlertAction *> *)actions{
-    return [XHGAlertView alertWithTopImage:topImage title:title message:message menus:nil actions:actions];
+    return [XHGAlertView alertWithTopImage:topImage title:title message:message customizeContentView:nil menus:nil actions:actions];
 }
 
 + (instancetype)alertWithTopImage:(UIImage *)topImage
                             title:(nullable NSString *)title
                           message:(nullable NSString *)message
+                            menus:(nullable NSArray<XHGAlertAction*> *)menus
+                          actions:(nonnull NSArray<XHGAlertAction*> *)actions{
+    return [XHGAlertView alertWithTopImage:topImage title:title message:message customizeContentView:nil menus:menus actions:actions];
+}
+
++ (instancetype)alertWithTopImage:(UIImage *)topImage
+                            title:(nullable NSString *)title
+                          message:(nullable NSString *)message
+             customizeContentView:(nullable UIView *)customView
                             menus:(nullable NSArray<XHGAlertAction*> *)menus
                           actions:(nonnull NSArray<XHGAlertAction*> *)actions{
     XHGAlertView * alert = [[XHGAlertView alloc] init];
@@ -297,14 +309,13 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         alert->_menus = menus;
         alert->_actions = actions;
         alert->_topImage = topImage;
+        alert->_customView = customView;
         alert.dismissByTapSpace = NO;
         alert.autoDismiss = YES;
         [alert setupView];
     }
     return alert;
 }
-
-
 
 - (void)show{
     self.dismissing = NO;
@@ -498,6 +509,25 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         lastView = self.messageLabel;
     }
     
+    if (self.customView) {
+        [self.scrollContentView addSubview:self.customView];
+        __weak typeof(self) weakself = self;
+        [self.customView mas_makeConstraints:^(MASConstraintMaker *make) {
+            __strong typeof(weakself) self = weakself;
+            make.top.mas_equalTo(lastView.mas_bottom);
+            make.centerX.mas_equalTo(0);
+            if (self.customView.bounds.size.width > 0) {
+                make.width.mas_equalTo(self.customView.bounds.size.width);
+            }else{
+                make.width.mas_equalTo(self.scrollContentView);
+            }
+            if (self.customView.bounds.size.height > 0) {
+                make.height.mas_equalTo(self.customView.bounds.size.height);
+            }
+        }];
+        lastView = self.customView;
+    }
+    
     if (self.menus.count > 0) {
         XHGAlertMenusView * menusView = [XHGAlertMenusView alertMenusViewWithActions:self.menus];
         menusView.alertView = self;
@@ -520,14 +550,20 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     
     
     // 处理下边界距离
-    if (self.menus.count > 0) {
+    if (self.menus.count > 0) {  // 选项框结尾时
         [lastView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(-22);
         }];
     }else{
-        [lastView mas_updateConstraints:^(MASConstraintMaker *make) {
-             make.bottom.mas_equalTo(-30);
-        }];
+        if (self.customView) { // 自定义内容视图结尾时
+            [lastView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.mas_equalTo(0);
+            }];
+        }else{ // 文字结尾时
+            [lastView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.mas_equalTo(-30);
+            }];
+        }
     }
     
 }

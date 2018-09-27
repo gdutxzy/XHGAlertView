@@ -25,12 +25,16 @@
     XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleHighlight handler:nil];
     XHGAlertAction * menu1 = [XHGAlertAction actionWithTitle:@"1" style:XHGAlertActionStyleHighlight handler:nil];
     XHGAlertAction * menu2 = [XHGAlertAction actionWithTitle:@"2" style:XHGAlertActionStyleHighlight handler:nil];
-    XHGAlertView * alert = [XHGAlertView alertWithTopImage:[UIImage imageNamed:@"default_wifi"] title:@"全样式弹窗" message:@"超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试" menus:@[menu1,menu2] actions:@[cancleAction,confirmAction]];
+    UILabel *customView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 50)];
+    customView.backgroundColor = [UIColor blueColor];
+    customView.text = @"自定义内容视图";
+    XHGAlertView * alert = [XHGAlertView alertWithTopImage:[UIImage imageNamed:@"default_wifi"] title:@"全样式弹窗" message:@"超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试" customizeContentView:customView menus:@[menu1,menu2] actions:@[cancleAction,confirmAction]];
     [alert show];
     
 }
 
 - (IBAction)muchAlertShow:(UIButton *)sender {
+    NSLog(@">>>>>1:%@",[UIApplication sharedApplication].windows);
     XHGAlertAction * cancleAction = [XHGAlertAction actionWithTitle:@"取消" style:XHGAlertActionStyleGray handler:nil];
     XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleHighlight handler:nil];
     
@@ -48,8 +52,9 @@
     [[XHGAlertView alertWithTitle:@"8" message:nil actions:@[confirmAction,cancleAction]] show];
     [self customViewAlert:nil];
     [[XHGAlertView alertWithTitle:@"9" message:nil actions:@[cancleAction,confirmAction]] show];
-
     
+    NSLog(@">>>>>2:%@",[UIApplication sharedApplication].windows.firstObject);
+
 }
 - (IBAction)oneByOne:(UIButton *)sender {
     __block NSInteger index = 1;
@@ -73,7 +78,7 @@
     [button setTitle:@"自定义弹窗视图" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button.backgroundColor = [UIColor whiteColor];
-    button.frame = CGRectMake(0, 0, 200, 300);
+    button.frame = CGRectMake(0, 0, 200, 1300);
     [button addTarget:self action:@selector(customViewButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     XHGAlertView * alert = [XHGAlertView alertWithCustomView:button];
     alert.dismissByTapSpace = YES;
