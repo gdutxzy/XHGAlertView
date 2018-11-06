@@ -18,21 +18,10 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 
-pod 'XHGAlertView',:source => 'http://git.xhg.com:8010/iOS/XHGRepo.git'
-
-```
-
-或者
-
-```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-source 'http://git.xhg.com:8010/iOS/XHGRepo.git'
-
-target 'target_name' do
 pod 'XHGAlertView'
-end
 
 ```
+
 
 
 ## Author
