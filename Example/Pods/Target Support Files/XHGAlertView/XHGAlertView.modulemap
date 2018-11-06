@@ -1,0 +1,6 @@
+framework module XHGAlertView {
+  umbrella header "XHGAlertView-umbrella.h"
+
+  export *
+  module * { export * }
+}

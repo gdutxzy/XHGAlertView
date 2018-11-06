@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'XHGAlertView_Example' do
+  pod 'XHGAlertView', :path => '../'
+
+  target 'XHGAlertView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

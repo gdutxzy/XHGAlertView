@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.1.0)
+  - XHGAlertView (1.0.0):
+    - Masonry
+
+DEPENDENCIES:
+  - XHGAlertView (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+
+EXTERNAL SOURCES:
+  XHGAlertView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  XHGAlertView: da34cb6ec8c02512967f5da6eae7657a2b90e402
+
+PODFILE CHECKSUM: c8108b1c33cfce40766a438839be016343ab9063
+
+COCOAPODS: 1.5.3
