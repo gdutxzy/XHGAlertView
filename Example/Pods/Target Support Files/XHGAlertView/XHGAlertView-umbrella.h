@@ -11,7 +11,9 @@
 #endif
 
 #import "UIButton+TouchUpInsideBlock.h"
+#import "XHGAlertMenusView.h"
 #import "XHGAlertView.h"
+#import "XHGTextView.h"
 
 FOUNDATION_EXPORT double XHGAlertViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char XHGAlertViewVersionString[];

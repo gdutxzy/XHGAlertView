@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w3h-ex-7Pk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w3h-ex-7Pk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,16 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csv-YM-Fzi">
-                                <rect key="frame" x="149" y="106" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="全样式弹窗"/>
-                                <connections>
-                                    <action selector="allShow:" destination="w3h-ex-7Pk" eventType="touchUpInside" id="RAF-7u-4c9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAX-sm-EEd">
-                                <rect key="frame" x="126" y="189" width="123" height="30"/>
+                                <rect key="frame" x="126" y="261" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="多个弹窗同时出现"/>
                                 <connections>
@@ -35,7 +27,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph7-65-EvR">
-                                <rect key="frame" x="57" y="272" width="261" height="30"/>
+                                <rect key="frame" x="57" y="299" width="261" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="一个弹窗正在消失时，另一个弹窗出现"/>
                                 <connections>
@@ -50,10 +42,35 @@
                                     <action selector="customViewAlert:" destination="w3h-ex-7Pk" eventType="touchUpInside" id="mbN-I1-lBM"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-oP-Ssf" customClass="XHGTextView">
+                                <rect key="frame" x="15" y="470" width="345" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="oKY-Hp-CvX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csv-YM-Fzi">
+                                <rect key="frame" x="149" y="214" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="全样式弹窗"/>
+                                <connections>
+                                    <action selector="allShow:" destination="w3h-ex-7Pk" eventType="touchUpInside" id="RAF-7u-4c9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="z2d-oP-Ssf" firstAttribute="top" secondItem="Rlk-lX-Fum" secondAttribute="top" constant="450" id="3G4-D7-5DC"/>
+                            <constraint firstItem="Rlk-lX-Fum" firstAttribute="trailing" secondItem="z2d-oP-Ssf" secondAttribute="trailing" constant="15" id="drL-dl-GZH"/>
+                            <constraint firstItem="z2d-oP-Ssf" firstAttribute="leading" secondItem="Rlk-lX-Fum" secondAttribute="leading" constant="15" id="zic-Ad-CML"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rlk-lX-Fum"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="z2d-oP-Ssf" id="r9J-0M-jjn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2Z-lx-PSg" sceneMemberID="firstResponder"/>
             </objects>

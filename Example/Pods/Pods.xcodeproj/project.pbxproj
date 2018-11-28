@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02BC0F543B2C55EB08F2C5DE7CC2A49B /* XHGAlertMenusView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5625BA8B055E88DB4C0DD40556E12265 /* XHGAlertMenusView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04A7D6AADAB213CE7D26F8EAD2F87536 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		068EF598E554EC57038ACFB89CC2C47A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07098D42A6D19FBD6A5D5D66F61B23A5 /* XHGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B12AB881C9C82F13E52B5507FC76F5E2 /* XHGTextView.m */; };
 		091D17D5D8F832D28546A72B788CF0AE /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F3DF5C3BEFCC9838B53C37735B414BE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		0FDB2B4F75591851F0F119EAE70B3F63 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11FC01FD489120C46343BCA1B0CBD1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DDB58FB8525698C8C459E7485FF5DB /* UIKit.framework */; };
 		1531A14C7754286B8A3055CB4B207700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ECFD12E78C2CA945044CB88F411C65 /* Foundation.framework */; };
-		1F78C0E86E8F05C444EE67C5FB48C8C4 /* XHGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BD4241961C5382A2FDA535DBCF3B44 /* XHGAlertView.m */; };
 		2854C9B1086758BD2B6681206B6759B4 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C1E740321E287E9D573704684D09FFB /* Pods-XHGAlertView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 434159187941ADFFFD144F9178E70C0B /* Pods-XHGAlertView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3020BF3ED3B8D1C7ADA7311C7D54C2E9 /* UIButton+TouchUpInsideBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D9286307DA631DAD490F7E46D5DAC6 /* UIButton+TouchUpInsideBlock.m */; };
 		36190943CF564213FA394F09C5B66902 /* Pods-XHGAlertView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEBB33CE486AECDC5F8CB0A2A9B8E5F /* Pods-XHGAlertView_Example-dummy.m */; };
 		3A78259E724B076ACF048EB7DD1B3CF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ECFD12E78C2CA945044CB88F411C65 /* Foundation.framework */; };
 		44A2862FAA827A6AC77DA3EE67F69984 /* Pods-XHGAlertView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9C627962E34C15FD4D9B2B3EDD35C6 /* Pods-XHGAlertView_Tests-dummy.m */; };
@@ -26,36 +28,38 @@
 		4D4F2050654580FE1F1D5F4F82CEDDB8 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50D130AE78CAFCCFCDA8B81905B8E40A /* Pods-XHGAlertView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB9D2E3E6A0F29DF895183AB72090DDE /* Pods-XHGAlertView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53BDF81D0A52EA526D597A5C5B139D7F /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */; };
-		55687789575FCC357ECF0B6C33EB59EC /* orange_circle_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CCFC9A9119BFFA8588D13076B9338C /* orange_circle_select@2x.png */; };
+		55687789575FCC357ECF0B6C33EB59EC /* orange_circle_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F026B7675109A566A58D8A5C976056E /* orange_circle_select@2x.png */; };
 		59F81DE0305CC2AC448D2A3C6B3280A2 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986CB32629319F7F2256662716334944 /* MASConstraint.m */; };
-		5A18209EDBEB35485DBD2A86AD86F9BD /* XHGAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31AFCC4D9C61DDC85237DA16626C899B /* XHGAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6316CC76CD17993EFBFAEB989B381584 /* UIButton+TouchUpInsideBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A17968AC385433B9A8D9802A2CDE81A /* UIButton+TouchUpInsideBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		636BBA734C1A17A734761D674FAE8800 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		660D882E92227B287A0C692B2C2E8509 /* XHGAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3C54BC5F2A108CE4E5AEA5A3C7AB9 /* XHGAlertView-dummy.m */; };
-		6A2ED38F7D19E4B98417391CC5029E0B /* UIButton+TouchUpInsideBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F60AEB41631B18835644BC1E5309C5 /* UIButton+TouchUpInsideBlock.m */; };
 		6C23BBF56ED4DCC10CA1765A6736D1F8 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */; };
+		7075E759768AB3CE25B92077666D1EF8 /* XHGTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE311A331FB2CA79B56ADEBD001EA87F /* XHGTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73BBDACC22CCA36A6DAAA167AD780BAF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */; };
 		756DF24546C7D91459DCADC8F1C98660 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */; };
+		7A9B5D6A6AD15730ABC4A8AAA1E59AB6 /* XHGAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 68E27F145B3B0FB3653DA8A262AA7C04 /* XHGAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C17BEA6034027310D1D205DB2008CA5 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		804F759FDCEB6268337C8B9E3D0266E8 /* XHGAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86A4600856D2EAE15511EF8C2FD6F0C2 /* XHGAlertView.bundle */; };
 		88DE7BAB1F4999A5F4B617F44E5FD1D3 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A6EEF68E7625AB66A3A8DED1594F88F /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */; };
 		8CD45B754192DE834B642975E85257AB /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EEC8BF2E2977F27C8374656FB40AEFA /* UIButton+TouchUpInsideBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = A3EF774873F0BBD7A4431FFC2409E6EF /* UIButton+TouchUpInsideBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A08A8AB356264E248D01F1BC0EF08166 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 818E990F262EC48F8DAAFD014D7E9234 /* Masonry-dummy.m */; };
 		A7370CE9231F9A4927142D79021879EC /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */; };
+		B04CB5B7B302045317BC936313F69449 /* XHGAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF1FAC7389FA8E1BC16F92754CDC4D9 /* XHGAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B44383A3FA435C1E986942C817339302 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B878FA4461BFE63C780CD5ED6A842F20 /* XHGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 262E38A11E46420B378C3388BDADE6B6 /* XHGAlertView.m */; };
 		BEFEA1EF0D0DCFEBCDBD40240208EF15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DDB58FB8525698C8C459E7485FF5DB /* UIKit.framework */; };
+		BFF2C876A072813EF78E413279A1939E /* XHGAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A0CDC8953837D3FA250790A05C8D98 /* XHGAlertView-dummy.m */; };
 		C0A16E00B4BC2D88A7833D5DAED62942 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF22EAFFC2F81B0426E2165AC93E44 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB4283F8F79D9835821A31084F7E556A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ECFD12E78C2CA945044CB88F411C65 /* Foundation.framework */; };
 		CC8F9B4A1AC4E276EA8AA4C6F2BF3CD4 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D130D2A425618806E467A7B85743CB66 /* orange_circle_select@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA694B936CE966552B2BBDF0584B468 /* orange_circle_select@3x.png */; };
+		CE3F7ED2AC6EEEFADB74F9A773B4EEF9 /* XHGAlertMenusView.m in Sources */ = {isa = PBXBuildFile; fileRef = F468B4C7E5E44560536317FB330D2A87 /* XHGAlertMenusView.m */; };
+		D130D2A425618806E467A7B85743CB66 /* orange_circle_select@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A049EE9602D3B01196F061A877959F68 /* orange_circle_select@3x.png */; };
 		D8B1525CB3DFCBD8E5032680530413D9 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCEBE17CFE4DFF46998460E543B2C4C1 /* orange_circle_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DD25086BBD6091710882CDC4D75C1E0 /* orange_circle_normal@2x.png */; };
-		DFE0D3268692AEB87182497149C30762 /* orange_circle_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85DF643E1004B0ECEB4115A10C01B74E /* orange_circle_normal@3x.png */; };
+		DCEBE17CFE4DFF46998460E543B2C4C1 /* orange_circle_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE6A297A20915ED0194F60D19B74B271 /* orange_circle_normal@2x.png */; };
+		DFE0D3268692AEB87182497149C30762 /* orange_circle_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 296231CD4DB015CDE0A2694D9B70007F /* orange_circle_normal@3x.png */; };
 		E72EDE323AC9F92EC8A00A93AC186093 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */; };
 		F4B3E44D5D2F6508BC1BB35A9FBDEC70 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */; };
-		F74D41D189A045CD298014135D01823B /* XHGAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0986E6FBF780673ED91073BA32B66A3F /* XHGAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,36 +101,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04CCFC9A9119BFFA8588D13076B9338C /* orange_circle_select@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_select@2x.png"; path = "XHGAlertView/Assets/orange_circle_select@2x.png"; sourceTree = "<group>"; };
-		0658870359ADE9A794764EB5ECC290CB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0686AA49A3D2B26B38865A99FF88C235 /* XHGAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XHGAlertView.xcconfig; sourceTree = "<group>"; };
 		0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		0986E6FBF780673ED91073BA32B66A3F /* XHGAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XHGAlertView.h; path = XHGAlertView/Classes/XHGAlertView.h; sourceTree = "<group>"; };
+		0A17968AC385433B9A8D9802A2CDE81A /* UIButton+TouchUpInsideBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+TouchUpInsideBlock.h"; path = "XHGAlertView/Classes/UIButton+TouchUpInsideBlock.h"; sourceTree = "<group>"; };
 		0AD69E0F3CB119335A2717CDE675917F /* Pods-XHGAlertView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XHGAlertView_Tests.modulemap"; sourceTree = "<group>"; };
+		0AF1FAC7389FA8E1BC16F92754CDC4D9 /* XHGAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XHGAlertView.h; path = XHGAlertView/Classes/XHGAlertView.h; sourceTree = "<group>"; };
 		164B0A16EB26F47B2928FD444A8A2405 /* Pods-XHGAlertView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XHGAlertView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		18B0CC02D6D74AEEF57AAB8B09CE8617 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C56B6C34CEEAE2DBE85F55B7D4889CA /* ResourceBundle-XHGAlertView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-XHGAlertView-Info.plist"; sourceTree = "<group>"; };
 		1EDE15CB07DD33F6CB9D44EED8678B3D /* Pods_XHGAlertView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XHGAlertView_Tests.framework; path = "Pods-XHGAlertView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		1FB8A9BDAB144F118F7F74E1F2B74097 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
+		262E38A11E46420B378C3388BDADE6B6 /* XHGAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XHGAlertView.m; path = XHGAlertView/Classes/XHGAlertView.m; sourceTree = "<group>"; };
+		296231CD4DB015CDE0A2694D9B70007F /* orange_circle_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_normal@3x.png"; path = "XHGAlertView/Assets/orange_circle_normal@3x.png"; sourceTree = "<group>"; };
+		2EFC8D683B8E40AE678EBAB9480B89A2 /* XHGAlertView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = XHGAlertView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		31AFCC4D9C61DDC85237DA16626C899B /* XHGAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XHGAlertView-umbrella.h"; sourceTree = "<group>"; };
-		31BD4241961C5382A2FDA535DBCF3B44 /* XHGAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XHGAlertView.m; path = XHGAlertView/Classes/XHGAlertView.m; sourceTree = "<group>"; };
+		327CEB6A65F906564538DCECB418B5C4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		36C40591902578632718E317104564A2 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		36D5B96A0066D183CD02E663641A3066 /* Pods-XHGAlertView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XHGAlertView_Example.modulemap"; sourceTree = "<group>"; };
 		3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
-		3927F891A46DC2E6FD4FBFAE21AAD4CC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		3BEBB33CE486AECDC5F8CB0A2A9B8E5F /* Pods-XHGAlertView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XHGAlertView_Example-dummy.m"; sourceTree = "<group>"; };
-		42F60AEB41631B18835644BC1E5309C5 /* UIButton+TouchUpInsideBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+TouchUpInsideBlock.m"; path = "XHGAlertView/Classes/UIButton+TouchUpInsideBlock.m"; sourceTree = "<group>"; };
 		434159187941ADFFFD144F9178E70C0B /* Pods-XHGAlertView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XHGAlertView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		4FF58676104361C060EE7B7E0D27D4B9 /* XHGAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XHGAlertView-prefix.pch"; sourceTree = "<group>"; };
 		5243C2BA1E8F78C14793B3ABB91876E7 /* Pods-XHGAlertView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XHGAlertView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		5625BA8B055E88DB4C0DD40556E12265 /* XHGAlertMenusView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XHGAlertMenusView.h; path = XHGAlertView/Classes/XHGAlertMenusView.h; sourceTree = "<group>"; };
 		567C6EDA341E473716264567070DED48 /* Pods-XHGAlertView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XHGAlertView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		5AA694B936CE966552B2BBDF0584B468 /* orange_circle_select@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_select@3x.png"; path = "XHGAlertView/Assets/orange_circle_select@3x.png"; sourceTree = "<group>"; };
 		611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		6A4ACAA41582EFA7EE0595A318601ED9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		68E27F145B3B0FB3653DA8A262AA7C04 /* XHGAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XHGAlertView-umbrella.h"; sourceTree = "<group>"; };
 		6BF35C23E029BF10AE1D3595169AFBCF /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		744288FCECC7BF5700783FCFD2E5F830 /* Pods-XHGAlertView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XHGAlertView_Example-resources.sh"; sourceTree = "<group>"; };
@@ -134,44 +140,46 @@
 		77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		7ACA87ACCD1A146BDC214A5FB4957D99 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EA3C54BC5F2A108CE4E5AEA5A3C7AB9 /* XHGAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XHGAlertView-dummy.m"; sourceTree = "<group>"; };
+		7CF3473631B7EAAB01CBB28CD1B7381B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		80D58BC1AA43D80C46BB78B1AB5939DC /* Pods-XHGAlertView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XHGAlertView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		818E990F262EC48F8DAAFD014D7E9234 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		8223B4B9D2A5B7C0F33D1BC8949FA9F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85DF643E1004B0ECEB4115A10C01B74E /* orange_circle_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_normal@3x.png"; path = "XHGAlertView/Assets/orange_circle_normal@3x.png"; sourceTree = "<group>"; };
 		86A4600856D2EAE15511EF8C2FD6F0C2 /* XHGAlertView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = XHGAlertView.bundle; path = "XHGAlertView-XHGAlertView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8715B5D93C294D1CFB9E8D8E485C9ADA /* Pods_XHGAlertView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XHGAlertView_Example.framework; path = "Pods-XHGAlertView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DD25086BBD6091710882CDC4D75C1E0 /* orange_circle_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_normal@2x.png"; path = "XHGAlertView/Assets/orange_circle_normal@2x.png"; sourceTree = "<group>"; };
 		8E9C627962E34C15FD4D9B2B3EDD35C6 /* Pods-XHGAlertView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XHGAlertView_Tests-dummy.m"; sourceTree = "<group>"; };
+		8F026B7675109A566A58D8A5C976056E /* orange_circle_select@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_select@2x.png"; path = "XHGAlertView/Assets/orange_circle_select@2x.png"; sourceTree = "<group>"; };
+		90D9286307DA631DAD490F7E46D5DAC6 /* UIButton+TouchUpInsideBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+TouchUpInsideBlock.m"; path = "XHGAlertView/Classes/UIButton+TouchUpInsideBlock.m"; sourceTree = "<group>"; };
 		920999A55578EEA01F82057C7F750E73 /* Pods-XHGAlertView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XHGAlertView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		9731C3644B7F728B8636EF78DE403F60 /* Pods-XHGAlertView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XHGAlertView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		986CB32629319F7F2256662716334944 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		98A0CDC8953837D3FA250790A05C8D98 /* XHGAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XHGAlertView-dummy.m"; sourceTree = "<group>"; };
 		A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		A049EE9602D3B01196F061A877959F68 /* orange_circle_select@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_select@3x.png"; path = "XHGAlertView/Assets/orange_circle_select@3x.png"; sourceTree = "<group>"; };
 		A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		A3EF774873F0BBD7A4431FFC2409E6EF /* UIButton+TouchUpInsideBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+TouchUpInsideBlock.h"; path = "XHGAlertView/Classes/UIButton+TouchUpInsideBlock.h"; sourceTree = "<group>"; };
+		A59D4FB2254F3C7553DFFF81F9D6D8D5 /* XHGAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XHGAlertView.modulemap; sourceTree = "<group>"; };
 		A632ABFC18D822A7057B83B5489E8773 /* Pods-XHGAlertView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XHGAlertView_Tests-resources.sh"; sourceTree = "<group>"; };
 		A8A014310F875D0868808980E56F6C06 /* Pods-XHGAlertView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XHGAlertView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A964BD669C7F4F6D1881F5E2A8ECD411 /* XHGAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XHGAlertView.framework; path = XHGAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
-		ADEB20A5A922105415B5782EC0A1370D /* XHGAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XHGAlertView.xcconfig; sourceTree = "<group>"; };
+		B12AB881C9C82F13E52B5507FC76F5E2 /* XHGTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XHGTextView.m; path = XHGAlertView/Classes/XHGTextView.m; sourceTree = "<group>"; };
 		B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		B1DDB58FB8525698C8C459E7485FF5DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		BFF427F5CC04311CAF2D11CC1DCDADD0 /* XHGAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XHGAlertView-prefix.pch"; sourceTree = "<group>"; };
 		C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		D0D43D13C0FA101C0B9833CC428183AB /* XHGAlertView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = XHGAlertView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CE311A331FB2CA79B56ADEBD001EA87F /* XHGTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XHGTextView.h; path = XHGAlertView/Classes/XHGTextView.h; sourceTree = "<group>"; };
 		DBF0B9A357F96DCE52C8F5E112B308DC /* Pods-XHGAlertView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XHGAlertView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		DE6A297A20915ED0194F60D19B74B271 /* orange_circle_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "orange_circle_normal@2x.png"; path = "XHGAlertView/Assets/orange_circle_normal@2x.png"; sourceTree = "<group>"; };
 		DF9F734CC7B96F050EBB1AC0B588B51C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6B88CB122A164610DC525B69622E872 /* XHGAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XHGAlertView.modulemap; sourceTree = "<group>"; };
+		E2D986CD0903D2C9E2F195AFA7E3393D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77198CEE0CF691E7915471E9F19CD96 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		EB9D2E3E6A0F29DF895183AB72090DDE /* Pods-XHGAlertView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XHGAlertView_Example-umbrella.h"; sourceTree = "<group>"; };
 		ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		F468B4C7E5E44560536317FB330D2A87 /* XHGAlertMenusView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XHGAlertMenusView.m; path = XHGAlertView/Classes/XHGAlertMenusView.m; sourceTree = "<group>"; };
 		F4ECFD12E78C2CA945044CB88F411C65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		FA45C58264A692B60556D8B1A13BEB89 /* ResourceBundle-XHGAlertView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-XHGAlertView-Info.plist"; sourceTree = "<group>"; };
 		FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		FF996F16C72BDAA93DE4EB067F179712 /* Pods-XHGAlertView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XHGAlertView_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,12 +231,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4745CC829B5926C74DC40A9D82654F84 /* Pod */ = {
+		02C4D2B711EB3ED8D31452033ABCF52C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6A4ACAA41582EFA7EE0595A318601ED9 /* LICENSE */,
-				3927F891A46DC2E6FD4FBFAE21AAD4CC /* README.md */,
-				D0D43D13C0FA101C0B9833CC428183AB /* XHGAlertView.podspec */,
+				E2D986CD0903D2C9E2F195AFA7E3393D /* Info.plist */,
+				1C56B6C34CEEAE2DBE85F55B7D4889CA /* ResourceBundle-XHGAlertView-Info.plist */,
+				A59D4FB2254F3C7553DFFF81F9D6D8D5 /* XHGAlertView.modulemap */,
+				0686AA49A3D2B26B38865A99FF88C235 /* XHGAlertView.xcconfig */,
+				98A0CDC8953837D3FA250790A05C8D98 /* XHGAlertView-dummy.m */,
+				4FF58676104361C060EE7B7E0D27D4B9 /* XHGAlertView-prefix.pch */,
+				68E27F145B3B0FB3653DA8A262AA7C04 /* XHGAlertView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/XHGAlertView";
+			sourceTree = "<group>";
+		};
+		135C5D4A9C02FF059CC8DACE32E59BB0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7CF3473631B7EAAB01CBB28CD1B7381B /* LICENSE */,
+				327CEB6A65F906564538DCECB418B5C4 /* README.md */,
+				2EFC8D683B8E40AE678EBAB9480B89A2 /* XHGAlertView.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -251,19 +274,15 @@
 			path = "Target Support Files/Pods-XHGAlertView_Tests";
 			sourceTree = "<group>";
 		};
-		531CB05A1BF6F90B1B56BC7485772BDA /* Support Files */ = {
+		58ED9C52827C334C4830E6C413C7C39F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0658870359ADE9A794764EB5ECC290CB /* Info.plist */,
-				FA45C58264A692B60556D8B1A13BEB89 /* ResourceBundle-XHGAlertView-Info.plist */,
-				E6B88CB122A164610DC525B69622E872 /* XHGAlertView.modulemap */,
-				ADEB20A5A922105415B5782EC0A1370D /* XHGAlertView.xcconfig */,
-				7EA3C54BC5F2A108CE4E5AEA5A3C7AB9 /* XHGAlertView-dummy.m */,
-				BFF427F5CC04311CAF2D11CC1DCDADD0 /* XHGAlertView-prefix.pch */,
-				31AFCC4D9C61DDC85237DA16626C899B /* XHGAlertView-umbrella.h */,
+				DE6A297A20915ED0194F60D19B74B271 /* orange_circle_normal@2x.png */,
+				296231CD4DB015CDE0A2694D9B70007F /* orange_circle_normal@3x.png */,
+				8F026B7675109A566A58D8A5C976056E /* orange_circle_select@2x.png */,
+				A049EE9602D3B01196F061A877959F68 /* orange_circle_select@3x.png */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/XHGAlertView";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		59511511C2B4BC905C933DCC67E365C4 /* Frameworks */ = {
@@ -275,24 +294,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6730714C23494EAAA899B086D4871F47 /* XHGAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				0A17968AC385433B9A8D9802A2CDE81A /* UIButton+TouchUpInsideBlock.h */,
+				90D9286307DA631DAD490F7E46D5DAC6 /* UIButton+TouchUpInsideBlock.m */,
+				5625BA8B055E88DB4C0DD40556E12265 /* XHGAlertMenusView.h */,
+				F468B4C7E5E44560536317FB330D2A87 /* XHGAlertMenusView.m */,
+				0AF1FAC7389FA8E1BC16F92754CDC4D9 /* XHGAlertView.h */,
+				262E38A11E46420B378C3388BDADE6B6 /* XHGAlertView.m */,
+				CE311A331FB2CA79B56ADEBD001EA87F /* XHGTextView.h */,
+				B12AB881C9C82F13E52B5507FC76F5E2 /* XHGTextView.m */,
+				135C5D4A9C02FF059CC8DACE32E59BB0 /* Pod */,
+				58ED9C52827C334C4830E6C413C7C39F /* Resources */,
+				02C4D2B711EB3ED8D31452033ABCF52C /* Support Files */,
+			);
+			name = XHGAlertView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		6EACBDE2F389AADE5FD282C4F6BF82D6 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6730714C23494EAAA899B086D4871F47 /* XHGAlertView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				7FF83F203B354AC343BEEB36CF16D355 /* Development Pods */,
+				6EACBDE2F389AADE5FD282C4F6BF82D6 /* Development Pods */,
 				59511511C2B4BC905C933DCC67E365C4 /* Frameworks */,
 				E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */,
 				CD5E275AF3DB7F1BCFA830D80CB31227 /* Products */,
 				A6FC00F71218A110D0B158E25D7F8148 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		7FF83F203B354AC343BEEB36CF16D355 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D6E00F9A291589F55DB9920BF73E5655 /* XHGAlertView */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		A2A20986957FCCEF3865AFC2DAE207A8 /* Masonry */ = {
@@ -338,17 +376,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B2FE29D6B3C00CA866F413BE4C942603 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8DD25086BBD6091710882CDC4D75C1E0 /* orange_circle_normal@2x.png */,
-				85DF643E1004B0ECEB4115A10C01B74E /* orange_circle_normal@3x.png */,
-				04CCFC9A9119BFFA8588D13076B9338C /* orange_circle_select@2x.png */,
-				5AA694B936CE966552B2BBDF0584B468 /* orange_circle_select@3x.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		CD5E275AF3DB7F1BCFA830D80CB31227 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,21 +400,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Masonry";
-			sourceTree = "<group>";
-		};
-		D6E00F9A291589F55DB9920BF73E5655 /* XHGAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				A3EF774873F0BBD7A4431FFC2409E6EF /* UIButton+TouchUpInsideBlock.h */,
-				42F60AEB41631B18835644BC1E5309C5 /* UIButton+TouchUpInsideBlock.m */,
-				0986E6FBF780673ED91073BA32B66A3F /* XHGAlertView.h */,
-				31BD4241961C5382A2FDA535DBCF3B44 /* XHGAlertView.m */,
-				4745CC829B5926C74DC40A9D82654F84 /* Pod */,
-				B2FE29D6B3C00CA866F413BE4C942603 /* Resources */,
-				531CB05A1BF6F90B1B56BC7485772BDA /* Support Files */,
-			);
-			name = XHGAlertView;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		DA65EFDEB6736E9B4E0BD94BFAD6201D /* Pods-XHGAlertView_Example */ = {
@@ -436,21 +448,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FDFD7C0061C104F653A6BEFF70B2042 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8EEC8BF2E2977F27C8374656FB40AEFA /* UIButton+TouchUpInsideBlock.h in Headers */,
-				5A18209EDBEB35485DBD2A86AD86F9BD /* XHGAlertView-umbrella.h in Headers */,
-				F74D41D189A045CD298014135D01823B /* XHGAlertView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		86E56FE7DA15FA75BA8229F7281EA7E0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				50D130AE78CAFCCFCDA8B81905B8E40A /* Pods-XHGAlertView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D878F6FDF095FD314014AB7EEAC72E01 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6316CC76CD17993EFBFAEB989B381584 /* UIButton+TouchUpInsideBlock.h in Headers */,
+				02BC0F543B2C55EB08F2C5DE7CC2A49B /* XHGAlertMenusView.h in Headers */,
+				7A9B5D6A6AD15730ABC4A8AAA1E59AB6 /* XHGAlertView-umbrella.h in Headers */,
+				B04CB5B7B302045317BC936313F69449 /* XHGAlertView.h in Headers */,
+				7075E759768AB3CE25B92077666D1EF8 /* XHGTextView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,10 +535,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7798728978467311ED6B36F863843513 /* Build configuration list for PBXNativeTarget "XHGAlertView" */;
 			buildPhases = (
-				C2D199DF05D180BB387186FAA483E935 /* Sources */,
+				D21A04DD320E5DB7A260F1AD7B8D2152 /* Sources */,
 				3338C201039E3EF242AB0ABD820DB3CD /* Frameworks */,
 				AE82110E2D8B5F401DF4E206B3FD1533 /* Resources */,
-				7FDFD7C0061C104F653A6BEFF70B2042 /* Headers */,
+				D878F6FDF095FD314014AB7EEAC72E01 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -665,13 +679,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2D199DF05D180BB387186FAA483E935 /* Sources */ = {
+		D21A04DD320E5DB7A260F1AD7B8D2152 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A2ED38F7D19E4B98417391CC5029E0B /* UIButton+TouchUpInsideBlock.m in Sources */,
-				660D882E92227B287A0C692B2C2E8509 /* XHGAlertView-dummy.m in Sources */,
-				1F78C0E86E8F05C444EE67C5FB48C8C4 /* XHGAlertView.m in Sources */,
+				3020BF3ED3B8D1C7ADA7311C7D54C2E9 /* UIButton+TouchUpInsideBlock.m in Sources */,
+				CE3F7ED2AC6EEEFADB74F9A773B4EEF9 /* XHGAlertMenusView.m in Sources */,
+				BFF2C876A072813EF78E413279A1939E /* XHGAlertView-dummy.m in Sources */,
+				B878FA4461BFE63C780CD5ED6A842F20 /* XHGAlertView.m in Sources */,
+				07098D42A6D19FBD6A5D5D66F61B23A5 /* XHGTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +762,7 @@
 		};
 		103BEF4DBC6681806747499B31248603 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADEB20A5A922105415B5782EC0A1370D /* XHGAlertView.xcconfig */;
+			baseConfigurationReference = 0686AA49A3D2B26B38865A99FF88C235 /* XHGAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XHGAlertView";
@@ -762,7 +778,7 @@
 		};
 		279D94EE99F2B606ACAA365D599FE03E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADEB20A5A922105415B5782EC0A1370D /* XHGAlertView.xcconfig */;
+			baseConfigurationReference = 0686AA49A3D2B26B38865A99FF88C235 /* XHGAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -823,7 +839,7 @@
 		};
 		5B6B1939EA451C471423D7055BDF3B4B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADEB20A5A922105415B5782EC0A1370D /* XHGAlertView.xcconfig */;
+			baseConfigurationReference = 0686AA49A3D2B26B38865A99FF88C235 /* XHGAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XHGAlertView";
@@ -839,7 +855,7 @@
 		};
 		7176720AC06F0887BB6C964CCB23BB3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADEB20A5A922105415B5782EC0A1370D /* XHGAlertView.xcconfig */;
+			baseConfigurationReference = 0686AA49A3D2B26B38865A99FF88C235 /* XHGAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

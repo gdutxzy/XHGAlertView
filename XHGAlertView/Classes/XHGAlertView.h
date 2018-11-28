@@ -86,18 +86,6 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 
 /**
- 标题、选项 弹窗提示
- @param title 标题,如果传nil，则此弹窗不会加载titleLabel，则后续无法设置titleLabel相关属性
- @param menus 列表单选项
- @param actions 操作按钮
- */
-+ (instancetype)alertWithTitle:(nullable NSString *)title
-                       menus:(nullable NSArray<XHGAlertAction*> *)menus
-                       actions:(nonnull NSArray<XHGAlertAction*> *)actions;
-
-
-
-/**
   图片、标题、内容 弹窗提示
  @param topImage 顶部图片
  @param title 标题,如果传nil，则此弹窗不会加载titleLabel，则后续无法设置titleLabel相关属性
@@ -116,14 +104,12 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
  @param title 标题,如果传nil，则此弹窗不会加载titleLabel，则后续无法设置titleLabel相关属性
  @param message 内容,如果传nil，则此弹窗不会加载messageLabel，则后续无法设置messageLabel相关属性
  @param customView 自定义内容视图，self.customView = customView
- @param menus 列表单选项
  @param actions 操作按钮
  */
 + (instancetype)alertWithTopImage:(UIImage *)topImage
                             title:(nullable NSString *)title
                           message:(nullable NSString *)message
              customizeContentView:(nullable UIView *)customView
-                            menus:(nullable NSArray<XHGAlertAction*> *)menus
                           actions:(nonnull NSArray<XHGAlertAction*> *)actions;
 
 
@@ -134,7 +120,6 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 @property (nonatomic, strong) UIImage *topImage;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong, readonly) NSArray<XHGAlertAction*> *menus;
 @property (nonatomic, strong, readonly) NSArray<XHGAlertAction*> *actions;
 
 /// 设置title富文本
@@ -142,12 +127,6 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 /// 设置message富文本
 @property (nonatomic, strong) NSAttributedString *attributedMessage;
 
-
-
-/**
- 设置/获取 选中的menus列表选项
- */
-@property (nonatomic, strong) XHGAlertAction * selectedMenuAction;
 
 
 /**

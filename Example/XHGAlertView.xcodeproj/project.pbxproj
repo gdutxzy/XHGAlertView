@@ -247,6 +247,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = gdutxzy;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 9934CD68ND;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -487,6 +490,7 @@
 			baseConfigurationReference = B5959E5441E730C09A149ADC /* Pods-XHGAlertView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9934CD68ND;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHGAlertView/XHGAlertView-Prefix.pch";
 				INFOPLIST_FILE = "XHGAlertView/XHGAlertView-Info.plist";
@@ -502,6 +506,7 @@
 			baseConfigurationReference = B0EDE85C27C4B7FF4FA7D963 /* Pods-XHGAlertView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9934CD68ND;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHGAlertView/XHGAlertView-Prefix.pch";
 				INFOPLIST_FILE = "XHGAlertView/XHGAlertView-Info.plist";

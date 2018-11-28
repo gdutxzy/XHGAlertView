@@ -8,9 +8,11 @@
 
 #import "XHGViewController.h"
 #import <XHGAlertView/XHGAlertView.h>
-#import "XHGAlertView.h"
+#import <XHGAlertView/XHGTextView.h>
+#import <XHGAlertView/XHGAlertMenusView.h>
 
 @interface XHGViewController ()
+@property (weak, nonatomic) IBOutlet XHGTextView *textView;
 
 @end
 
@@ -19,19 +21,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.textView.layer.borderWidth = 1;
+    self.textView.layer.borderColor = [UIColor blackColor].CGColor;
+    self.textView.layer.cornerRadius = 3;
+    self.textView.placeholder = @"请输入简单的原因";
+
 }
 - (IBAction)allShow:(UIButton *)sender {
     NSLog(@">>>>>%@",[UIScreen mainScreen]);
     
     XHGAlertAction * cancleAction = [XHGAlertAction actionWithTitle:@"取消" style:XHGAlertActionStyleGray handler:nil];
     XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleHighlight handler:nil];
-    XHGAlertAction * menu1 = [XHGAlertAction actionWithTitle:@"1" style:XHGAlertActionStyleHighlight handler:nil];
-    XHGAlertAction * menu2 = [XHGAlertAction actionWithTitle:@"2" style:XHGAlertActionStyleHighlight handler:nil];
-    UILabel *customView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 50)];
-    customView.backgroundColor = [UIColor blueColor];
-    customView.text = @"自定义内容视图";
-    XHGAlertView * alert = [XHGAlertView alertWithTopImage:[UIImage imageNamed:@"default_wifi"] title:@"全样式弹窗" message:@"超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试" customizeContentView:customView menus:@[menu1,menu2] actions:@[cancleAction,confirmAction]];
+//    UILabel *customView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 50)];
+//    customView.backgroundColor = [UIColor blueColor];
+//    customView.text = @"自定义内容视图";
+    XHGAlertMenusView *customView = [XHGAlertMenusView alertMenusViewWithTitles:@[@"1.好",@"2.不好"] textViewPlaceholder:@"请输入简单理由"];
+    XHGAlertView * alert = [XHGAlertView alertWithTopImage:[UIImage imageNamed:@"default_wifi"] title:@"全样式弹窗" message:@"超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试超长内容测试" customizeContentView:customView actions:@[cancleAction,confirmAction]] ;
     [alert show];
+    
     
 }
 
