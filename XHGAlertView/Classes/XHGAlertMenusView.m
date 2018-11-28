@@ -33,7 +33,7 @@
 
 
 
-@interface XHGAlertMenusView (){
+@interface XHGAlertMenusView ()<UITextViewDelegate>{
     XHGTextView *_textView;
 }
 
@@ -130,6 +130,12 @@
     }];
 }
 
+#pragma mark - UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    NSString * str = [textView.text stringByReplacingCharactersInRange:range withString:text];
+  
+    return str.length <= 30;
+}
 
 
 - (XHGTextView *)textView{
@@ -142,6 +148,7 @@
         _textView.layer.borderWidth = 1/[UIScreen mainScreen].scale;
         _textView.layer.borderColor = [UIColor colorWithRed:(0xe5/255.0) green:(0xe5/255.0) blue:(0xe5/255.0) alpha:1].CGColor;
         _textView.textContainerInset = UIEdgeInsetsMake(15, 8, 8, 6);
+        _textView.delegate = self;
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.lineSpacing = 6;
         NSDictionary *attributes = @{
