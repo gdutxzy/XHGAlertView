@@ -67,7 +67,7 @@
 }
 
 - (void)textDidChange:(NSNotification *)noti{
-    self.text = self.text;
+    [self setContent:self.text];
 }
 
 - (void)textDidEndEditing:(NSNotification *)noti{

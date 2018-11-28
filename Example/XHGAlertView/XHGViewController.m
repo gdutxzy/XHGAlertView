@@ -31,7 +31,10 @@
     NSLog(@">>>>>%@",[UIScreen mainScreen]);
     
     XHGAlertAction * cancleAction = [XHGAlertAction actionWithTitle:@"取消" style:XHGAlertActionStyleGray handler:nil];
-    XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleHighlight handler:nil];
+    XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleHighlight handler:^(XHGAlertAction *action, XHGAlertView *alertView) {
+        XHGAlertMenusView *customView = alertView.customView;
+        NSLog(@">>>>>>textViewContent:%@",customView.textView.text);
+    }];
 //    UILabel *customView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 50)];
 //    customView.backgroundColor = [UIColor blueColor];
 //    customView.text = @"自定义内容视图";

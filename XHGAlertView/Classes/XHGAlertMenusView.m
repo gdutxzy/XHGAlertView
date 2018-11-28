@@ -104,14 +104,7 @@
 
 
 - (void)menuButtonAction:(UIButton *)sender{
-    for (XHGAlertMenuButton * button in self.buttons) {
-        if (button == sender) {
-            _selectedIndex = button.tag;
-            button.selected = YES;
-        }else{
-            button.selected = NO;
-        }
-    }
+    self.selectedIndex = sender.tag;
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
@@ -123,6 +116,18 @@
             button.selected = NO;
         }
     }
+    [UIView animateWithDuration:0.3 animations:^{
+        if (self.selectedIndex == self.titles.count-1) {
+            [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(77);
+            }];
+        }else{
+            [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(0);
+            }];
+        }
+        [self.superview.superview.superview layoutIfNeeded];
+    }];
 }
 
 
@@ -136,6 +141,15 @@
         _textView.layer.cornerRadius = 3;
         _textView.layer.borderWidth = 1/[UIScreen mainScreen].scale;
         _textView.layer.borderColor = [UIColor colorWithRed:(0xe5/255.0) green:(0xe5/255.0) blue:(0xe5/255.0) alpha:1].CGColor;
+        _textView.textContainerInset = UIEdgeInsetsMake(15, 8, 8, 6);
+        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+        paragraphStyle.lineSpacing = 6;
+        NSDictionary *attributes = @{
+                                     NSForegroundColorAttributeName:_textView.textColor,
+                                     NSFontAttributeName:[UIFont systemFontOfSize:14],
+                                     NSParagraphStyleAttributeName:paragraphStyle
+                                     };
+        _textView.typingAttributes = attributes;
     }
     return _textView;
 }

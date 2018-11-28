@@ -116,7 +116,7 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 
 /// 自定义视图
-@property (nonatomic, weak, readonly)   UIView *customView;
+@property (nonatomic, weak, readonly) __kindof UIView *customView;
 @property (nonatomic, strong) UIImage *topImage;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *message;
