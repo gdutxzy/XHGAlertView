@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XHGAlertView'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'AlertView，for XHG, supports Custom view'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  'XHGAlertView ，小黄狗自定义的AlertView样式弹窗，支持整个弹窗完全由自己绘制，也支持将自己自定义的视图加入到默认的样式中。'
+  'XHGAlertView ，小黄狗自定义的AlertView样式弹窗，支持整个弹窗完全由自己绘制，也支持将自己自定义的视图加入到默认的样式中。自定义视图支持包含UITextView/UITextField，能保证输入源不会被键盘遮挡'
   
                        DESC
 
