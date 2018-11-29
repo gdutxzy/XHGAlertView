@@ -41,13 +41,13 @@ Pod::Spec.new do |s|
   
   s.default_subspec = ''
   
-  s.subspec 'customizeMenuView' do |cmv|
+  # s.subspec 'customizeMenuView' do |cmv|
       #cmv.framework = 'UIKit'
       # cmv.dependency 'Masonry'
       # cmv.source_files = 'XHGAlertView/Classes/XHGAlertMenusView.{h,m}', 'XHGAlertView/Classes/XHGTextView.{h,m}'
       #   cmv.resource_bundles = {
       #      'XHGAlertView' => ['XHGAlertView/Assets/*.png']
           #   }
-  end
+          #end
   
 end
