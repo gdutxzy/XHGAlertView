@@ -22,7 +22,13 @@ pod 'XHGAlertView'
 
 ```
 
+小黄狗弹窗选项视图，非通用视图
 
+```ruby
+
+pod 'XHGAlertView', :subspecs =>['customizeMenuView']
+
+```
 
 ## Author
 

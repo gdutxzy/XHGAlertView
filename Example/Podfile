@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'XHGAlertView_Example' do
-  pod 'XHGAlertView', :path => '../'
+    pod 'XHGAlertView', :path => '../', :subspecs =>['customizeMenuView']
 
   target 'XHGAlertView_Tests' do
     inherit! :search_paths

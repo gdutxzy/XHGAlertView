@@ -1,23 +1,22 @@
 PODS:
   - Masonry (1.1.0)
-  - XHGAlertView (1.0.0):
+  - XHGAlertView/Core (1.1.2):
     - Masonry
+  - XHGAlertView/customizeMenuView (1.1.2):
+    - Masonry
+    - XHGAlertView/Core
 
 DEPENDENCIES:
-  - XHGAlertView (from `../`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Masonry
+  - XHGAlertView/customizeMenuView (from `../`)
 
 EXTERNAL SOURCES:
   XHGAlertView:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  XHGAlertView: da34cb6ec8c02512967f5da6eae7657a2b90e402
+  XHGAlertView: d22d63e0b45a4dbb53a5ecbb81e18eabc5c49d40
 
-PODFILE CHECKSUM: c8108b1c33cfce40766a438839be016343ab9063
+PODFILE CHECKSUM: c61bc8c67326910c7a55cbc1e0731d708cadce18
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0.beta.2
