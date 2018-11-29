@@ -33,7 +33,12 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'XHGAlertView/Classes/UIButton+TouchUpInsideBlock.{h,m}', 'XHGAlertView/Classes/XHGAlertView.{h,m}'
-
+  
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.frameworks = 'UIKit'
+  s.dependency 'Masonry'
+  
+  
 #s.default_subspec = ''
   
   s.subspec 'customizeMenuView' do |cmv|
@@ -45,9 +50,4 @@ Pod::Spec.new do |s|
           #   }
   end
   
-  
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit'
-  s.dependency 'Masonry'
 end
