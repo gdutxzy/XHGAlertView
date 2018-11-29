@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XHGAlertView'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'AlertView，for XHG, supports Custom view'
 
 # This description is used to generate tags and improve search results.
@@ -30,12 +30,23 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.requires_arc = true
 
-  s.source_files = 'XHGAlertView/Classes/**/*'
+  s.source_files = 'XHGAlertView/Classes/UIButton+TouchUpInsideBlock.{h,m}', 'XHGAlertView/Classes/XHGAlertView.{h,m}'
+
+  s.default_subspec = ''
   
-   s.resource_bundles = {
-     'XHGAlertView' => ['XHGAlertView/Assets/*.png']
-   }
+  s.subspec 'customizeMenuView' do |cmv|
+      cmv.framework = 'UIKit'
+      cmv.dependency 'Masonry'
+      cmv.dependency 'XHGAlertView'
+      cmv.source_files = 'XHGAlertView/Classes/XHGAlertMenusView.{h,m}', 'XHGAlertView/Classes/XHGTextView.{h,m}'
+      cmv.resource_bundles = {
+          'XHGAlertView' => ['XHGAlertView/Assets/*.png']
+      }
+  end
+  
+  
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
