@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   s.dependency 'Masonry'
   
   
-  s.default_subspec = ''
+  # s.default_subspec = ''
   
   # s.subspec 'customizeMenuView' do |cmv|
       #cmv.framework = 'UIKit'
