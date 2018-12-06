@@ -12,15 +12,15 @@
 @implementation UIButton (TouchUpInsideBlock)
 
 //动态绑定
-static char *actionBlock_bind;
+static char *xhg_actionBlock_bind;
 - (void)setXhg_clickBlock:(void (^)(UIButton *))actionBlock {
     [self removeTarget:self action:@selector(UIButtonActionBlockClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addTarget:self action:@selector(UIButtonActionBlockClick:) forControlEvents:UIControlEventTouchUpInside];
-    objc_setAssociatedObject(self, &actionBlock_bind, actionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &xhg_actionBlock_bind, actionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void (^)(UIButton *))xhg_clickBlock {
-    return objc_getAssociatedObject(self, &actionBlock_bind);
+    return objc_getAssociatedObject(self, &xhg_actionBlock_bind);
 }
 
 
