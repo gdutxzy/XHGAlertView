@@ -11,10 +11,11 @@
 @interface XHGTextView ()
 @property (nonatomic,strong) NSString *content;
 @property (nonatomic,strong) UIColor *contentColor;
-
 @end
 
+
 @implementation XHGTextView
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -24,9 +25,29 @@
     [self setContent:text];
 }
 
+- (NSString *)text{
+    return self.content;
+}
+
 - (void)setTextColor:(UIColor *)textColor{
     [super setTextColor:textColor];
     [self setContentColor:textColor];
+}
+
+- (UIColor *)textColor {
+    if (!self.contentColor) {
+        return [super textColor];
+    }
+    return self.contentColor;
+}
+
+
+- (void)setPlaceholderStyle:(NSString *)placeholder {
+    if (self.content.length == 0) {
+        [super setText:placeholder];
+        self.textColor = [super textColor];
+        [super setTextColor:self.placeholderColor];
+    }
 }
 
 - (void)setPlaceholder:(NSString *)placeholder{
@@ -37,13 +58,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEditing:) name:UITextViewTextDidEndEditingNotification object:self];
 }
 
-- (void)setPlaceholderStyle:(NSString *)placeholder {
-    if (self.content.length == 0) {
-        [super setText:placeholder];
-        self.textColor = self.textColor;
-        [super setTextColor:self.placeholderColor];
-    }
-}
 
 - (UIColor *)placeholderColor{
     if (!_placeholderColor) {
@@ -67,7 +81,7 @@
 }
 
 - (void)textDidChange:(NSNotification *)noti{
-    [self setContent:self.text];
+    [self setContent:[super text]];
 }
 
 - (void)textDidEndEditing:(NSNotification *)noti{
