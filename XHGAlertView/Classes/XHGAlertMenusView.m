@@ -36,14 +36,25 @@
 @interface XHGAlertMenusView ()<UITextViewDelegate>{
     XHGTextView *_textView;
 }
-
+@property (nonatomic, assign) BOOL showTextView;
 @end
 
 @implementation XHGAlertMenusView
++ (instancetype)alertMenusViewWithTitles:(NSArray<NSString*> *)titles {
+    XHGAlertMenusView * menusView = [[XHGAlertMenusView alloc] init];
+    if (menusView) {
+        menusView->_titles = titles;
+        menusView->_showTextView = NO;
+        [menusView setupView];
+    }
+    return menusView;
+}
+
 + (instancetype)alertMenusViewWithTitles:(NSArray<NSString*> *)titles textViewPlaceholder:(NSString *)placeholder{
     XHGAlertMenusView * menusView = [[XHGAlertMenusView alloc] init];
     if (menusView) {
         menusView->_titles = titles;
+        menusView->_showTextView = YES;
         menusView.textView.placeholder = placeholder;
         [menusView setupView];
     }
@@ -87,15 +98,20 @@
         }
         lastButton = button;
     }
-    
-    [self addSubview:self.textView];
-    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(lastButton.mas_bottom).offset(0);
-        make.left.mas_equalTo(25);
-        make.right.mas_equalTo(-25);
-        make.height.mas_equalTo(77);
-        make.bottom.mas_equalTo(-22);
-    }];
+    if (_showTextView) {
+        [self addSubview:self.textView];
+        [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(lastButton.mas_bottom).offset(0);
+            make.left.mas_equalTo(25);
+            make.right.mas_equalTo(-25);
+            make.height.mas_equalTo(77);
+            make.bottom.mas_equalTo(-22);
+        }];
+    }else{
+        [lastButton mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-22);
+        }];
+    }
     
     self->_buttons = buttons;
     // 默认选中第一项
@@ -116,18 +132,20 @@
             button.selected = NO;
         }
     }
-    [UIView animateWithDuration:0.3 animations:^{
-        if (self.selectedIndex == self.titles.count-1) {
-            [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(77);
-            }];
-        }else{
-            [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(0);
-            }];
-        }
-        [self.superview.superview.superview layoutIfNeeded];
-    }];
+    if (_showTextView) {
+        [UIView animateWithDuration:0.3 animations:^{
+            if (self.selectedIndex == self.titles.count-1) {
+                [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.height.mas_equalTo(77);
+                }];
+            }else{
+                [self.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.height.mas_equalTo(0);
+                }];
+            }
+            [self.superview.superview.superview layoutIfNeeded];
+        }];
+    }
 }
 
 #pragma mark - UITextViewDelegate

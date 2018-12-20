@@ -661,13 +661,21 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     NSDictionary *userInfo = noti.userInfo;
     NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [aValue CGRectValue];
-    CGRect inputViewRect = [self.inputView.superview convertRect:self.inputView.frame toView:self.alertBgWindow];
-    NSInteger gap = CGRectGetMaxY(inputViewRect) - keyboardRect.origin.y;
+    
+    CGRect inputViewRect = self.inputView.frame;
+    inputViewRect.size.height = CGRectGetHeight(inputViewRect) > 100 ? 100 : inputViewRect.size.height;// 避免输入视图过大而导致的过分偏移
+
+    [self.scrollView scrollRectToVisible:[self.inputView.superview convertRect:inputViewRect toView:self.scrollView] animated:YES]; // 将输入视图滚动到可视位置
+ 
+    // 计算输入视图与键盘的差值，是否会被键盘覆盖
+    NSInteger gap = CGRectGetMaxY([self.inputView.superview convertRect:inputViewRect toView:self.alertBgWindow]) - keyboardRect.origin.y;
     if (gap > 0) {
         CGRect rect = self.alertBgWindow.frame;
         rect.origin.y = -gap;
         [UIView animateWithDuration:0.3 animations:^{
             [self.alertBgWindow setFrame:rect];
+        } completion:^(BOOL finished) {
+           
         }];
     }
 }
