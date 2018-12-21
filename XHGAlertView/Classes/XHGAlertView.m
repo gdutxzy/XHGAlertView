@@ -408,7 +408,6 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 
 - (void)dismiss{
-    [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
     [[NSNotificationCenter defaultCenter] removeObserver:self];//避免键盘通知错误影响当前显示
     self.dismissing = YES;
     [self.layer removeAllAnimations];
