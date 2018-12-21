@@ -657,6 +657,9 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 #pragma mark - 键盘通知
 - (void)keyboardWillShow:(NSNotification *)noti {
+    if (!self.inputView) {
+        return;
+    }
     NSDictionary *userInfo = noti.userInfo;
     NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [aValue CGRectValue];
@@ -680,6 +683,9 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 }
 
 - (void)keyboardWillHide:(NSNotification *)noti {
+    if (!self.inputView) {
+        return;
+    }
     CGRect rect = self.alertBgWindow.frame;
     rect.origin.x = 0;
     rect.origin.y = 0;
