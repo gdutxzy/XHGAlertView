@@ -9,18 +9,12 @@
 #import "XHGAlertView.h"
 #import "UIButton+TouchUpInsideBlock.h"
 #import "Masonry.h"
+#import "XHGOrientationVC.h"
 
 // 屏幕宽度
 #define KDECEIVE_WIDTH ([UIScreen mainScreen].bounds.size.width)
 // 屏幕高度
 #define KDECEIVE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-
-//页面比例计算值
-#define WIDTH_RADIUS (KDECEIVE_WIDTH/375.0)
-
-//获取屏幕适合的尺寸
-#define getScaleWidth(x)  round(x * WIDTH_RADIUS)
-#define getScaleHeight(x) round(x * WIDTH_RADIUS)
 
 #define highlightColor [UIColor colorWithRed:(0xff/255.0) green:(0xbf/255.0) blue:(0x00/255.0) alpha:1]
 #define grayColor [UIColor colorWithRed:(0x99/255.0) green:(0x99/255.0) blue:(0x99/255.0) alpha:1]
@@ -378,7 +372,12 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         window.windowLevel = UIWindowLevelAlert;
         window.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         [window makeKeyAndVisible];
+        XHGOrientationVC *vc = [[XHGOrientationVC alloc] init];
+        window.rootViewController = vc;
+        vc.view.backgroundColor = [UIColor clearColor];
+        vc.view.userInteractionEnabled = NO;
         [window addSubview:self];
+
         if (!_widowsDic) {
             _widowsDic = [NSMutableDictionary dictionary];
         }
@@ -386,11 +385,12 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         self.alertBgWindow = window;
         
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(getScaleWidth(305)).priorityHigh();
             make.centerX.mas_equalTo(0);
             make.centerY.mas_equalTo(0);
             make.top.mas_greaterThanOrEqualTo(60);
             make.bottom.mas_lessThanOrEqualTo(-60);
+            make.left.mas_equalTo(35).priorityHigh();
+            make.right.mas_equalTo(-35).priorityHigh();
         }];
     }
 
@@ -471,11 +471,11 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.mas_equalTo(0);
-        make.height.mas_equalTo(getScaleHeight(44));
+        make.height.mas_equalTo(44);
     }];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(-getScaleHeight(44));
+        make.bottom.mas_equalTo(-44);
     }];
     __weak typeof(self) weakself = self;
     [self.scrollContentView mas_makeConstraints:^(MASConstraintMaker *make) {
