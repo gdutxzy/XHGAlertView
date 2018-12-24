@@ -44,8 +44,7 @@ Pod::Spec.new do |s|
     s.subspec 'Core' do |c|
         c.framework = 'UIKit'
         c.dependency 'Masonry'
-        c.source_files = 'XHGAlertView/Classes/UIButton+TouchUpInsideBlock.{h,m}', 'XHGAlertView/Classes/XHGAlertView.{h,m}','XHGAlertView/Classes/XHGOrientationVC.{h.m}'
-        c.private_header_files = 'XHGAlertView/Classes/XHGOrientationVC.h'
+        c.source_files = 'XHGAlertView/Classes/UIButton+TouchUpInsideBlock.{h,m}', 'XHGAlertView/Classes/XHGAlertView.{h,m}'
     end
     
     s.subspec 'customizeMenuView' do |cmv|

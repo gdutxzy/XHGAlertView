@@ -9,7 +9,8 @@
 #import "XHGAlertView.h"
 #import "UIButton+TouchUpInsideBlock.h"
 #import "Masonry.h"
-#import "XHGOrientationVC.h"
+
+
 
 // 屏幕宽度
 #define KDECEIVE_WIDTH ([UIScreen mainScreen].bounds.size.width)
@@ -29,6 +30,19 @@ static NSMutableDictionary<NSString*,UIWindow*> *_widowsDic;
 static NSMutableArray<XHGAlertView *> *_alertArray;
 
 
+@interface XHGAlertViewOrientationVC : UIViewController
+@end
+@implementation XHGAlertViewOrientationVC
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+@end
 
 
 
@@ -372,7 +386,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         window.windowLevel = UIWindowLevelAlert;
         window.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         [window makeKeyAndVisible];
-        XHGOrientationVC *vc = [[XHGOrientationVC alloc] init];
+        XHGAlertViewOrientationVC *vc = [[XHGAlertViewOrientationVC alloc] init];
         window.rootViewController = vc;
         vc.view.backgroundColor = [UIColor clearColor];
         vc.view.userInteractionEnabled = NO;
@@ -793,3 +807,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     return view;
 }
 @end
+
+
+
+
