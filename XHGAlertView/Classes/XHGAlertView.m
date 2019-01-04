@@ -566,7 +566,11 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         __weak typeof(self) weakself = self;
         [self.customView mas_makeConstraints:^(MASConstraintMaker *make) {
             __strong typeof(weakself) self = weakself;
-            make.top.mas_equalTo(lastView.mas_bottom);
+            if (lastView) {
+                make.top.mas_equalTo(lastView.mas_bottom);
+            }else{
+                make.top.mas_equalTo(0);
+            }
             make.centerX.mas_equalTo(0);
             if (self.customView.bounds.size.width > 0) {
                 make.width.mas_equalTo(self.customView.bounds.size.width);
