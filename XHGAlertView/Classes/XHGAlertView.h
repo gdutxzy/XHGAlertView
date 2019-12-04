@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 
 typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
-    /// 灰黑色
-    XHGAlertActionStyleGray,
-    /// 主题黄色
-    XHGAlertActionStyleHighlight,
-    /// 自定义颜色
-    XHGAlertActionStyleCustom,
+    XHGAlertActionStyleGray, ///< 灰黑色
+    XHGAlertActionStyleHighlight, ///< 主题黄色
+    XHGAlertActionStyleCustom, ///< 自定义颜色
+    XHGAlertActionStyleBoldOcean, ///<  粗体暗蓝色
+    XHGAlertActionStyleBoldBlack, ///<  粗体黑色
 };
 
 @class XHGAlertView;
@@ -92,7 +92,7 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
  @param message 内容,如果传nil，则此弹窗不会加载messageLabel，则后续无法设置messageLabel相关属性
  @param actions 操作按钮
  */
-+ (instancetype)alertWithTopImage:(UIImage *)topImage
++ (instancetype)alertWithTopImage:(nullable UIImage *)topImage
                             title:(nullable NSString *)title
                           message:(nullable NSString *)message
                           actions:(nonnull NSArray<XHGAlertAction*> *)actions;
@@ -106,7 +106,7 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
  @param customView 自定义内容视图，self.customView = customView
  @param actions 操作按钮
  */
-+ (instancetype)alertWithTopImage:(UIImage *)topImage
++ (instancetype)alertWithTopImage:(nullable UIImage *)topImage
                             title:(nullable NSString *)title
                           message:(nullable NSString *)message
              customizeContentView:(nullable UIView *)customView
@@ -120,7 +120,12 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 @property (nonatomic, strong) UIImage *topImage;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong, readonly) UILabel * titleLabel;
+@property (nonatomic, strong, readonly) UILabel * messageLabel;
+@property (nonatomic, strong, readonly) UIImageView * topImageView;
+
 @property (nonatomic, strong, readonly) NSArray<XHGAlertAction*> *actions;
+@property (nonatomic, strong, readonly) NSArray<UIButton *> *actionButtons;
 
 /// 设置title富文本
 @property (nonatomic, strong) NSAttributedString *attributedTitle;
@@ -160,3 +165,6 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 - (void)dismiss;
 
 @end
+
+
+NS_ASSUME_NONNULL_END

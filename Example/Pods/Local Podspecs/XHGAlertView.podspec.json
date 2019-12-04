@@ -1,6 +1,6 @@
 {
   "name": "XHGAlertView",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "summary": "AlertView，for XHG, supports Custom view",
   "description": "'XHGAlertView ，小黄狗自定义的AlertView样式弹窗，支持整个弹窗完全由自己绘制，也支持将自己自定义的视图加入到默认的样式中。自定义视图支持包含UITextView/UITextField，能保证输入源不会被键盘遮挡'",
   "homepage": "https://github.com/gdutxzy/XHGAlertView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gdutxzy/XHGAlertView.git",
-    "tag": "1.1.2"
+    "tag": "1.2.1"
   },
   "platforms": {
     "ios": "8.0"

@@ -17,8 +17,10 @@
 // 屏幕高度
 #define KDECEIVE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-#define highlightColor [UIColor colorWithRed:(0xff/255.0) green:(0xbf/255.0) blue:(0x00/255.0) alpha:1]
-#define grayColor [UIColor colorWithRed:(0x99/255.0) green:(0x99/255.0) blue:(0x99/255.0) alpha:1]
+#define xhg_highlightColor [UIColor colorWithRed:(0xff/255.0) green:(0xbf/255.0) blue:(0x00/255.0) alpha:1]
+#define xhg_grayColor [UIColor colorWithRed:(0x99/255.0) green:(0x99/255.0) blue:(0x99/255.0) alpha:1]
+#define xhg_oceanColor [UIColor colorWithRed:(0x57/255.0) green:(0x6b/255.0) blue:(0x95/255.0) alpha:1]
+#define xhg_blackColor [UIColor colorWithRed:(0x30/255.0) green:(0x30/255.0) blue:(0x30/255.0) alpha:1]
 
 
 @class  XHGAlertView;
@@ -244,12 +246,6 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 @property (nonatomic,strong) UIView * scrollContentView;
 @property (nonatomic,strong) UIView * bottomView;
 
-
-@property (nonatomic,strong) UIImageView * topImageView;
-@property (nonatomic,strong) UILabel * titleLabel;
-@property (nonatomic,strong) UILabel * messageLabel;
-@property (nonatomic,strong) NSArray<UIButton *> *actionButtons;
-
 /// 消息动画正在进行
 @property (nonatomic,assign) BOOL dismissing;
 
@@ -258,6 +254,11 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 
 @implementation XHGAlertView
+@synthesize titleLabel = _titleLabel;
+@synthesize messageLabel = _messageLabel;
+@synthesize topImageView = _topImageView;
+@synthesize actionButtons = _actionButtons;
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@">>>>>alert dealloc");
@@ -615,15 +616,25 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         [self.bottomView addSubview:button];
         switch (action.style) {
             case XHGAlertActionStyleGray: {
-                [button setTitleColor:grayColor forState:UIControlStateNormal];
+                [button setTitleColor:xhg_grayColor forState:UIControlStateNormal];
             }
                 break;
             case XHGAlertActionStyleHighlight: {
-                [button setTitleColor:highlightColor forState:UIControlStateNormal];
+                [button setTitleColor:xhg_highlightColor forState:UIControlStateNormal];
             }
                 break;
             case XHGAlertActionStyleCustom: {
                 [button setTitleColor:action.customTextColor forState:UIControlStateNormal];
+            }
+                break;
+            case XHGAlertActionStyleBoldOcean: {
+                [button setTitleColor:xhg_oceanColor forState:UIControlStateNormal];
+                button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+            }
+                break;
+            case XHGAlertActionStyleBoldBlack: {
+                [button setTitleColor:xhg_blackColor forState:UIControlStateNormal];
+                button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
             }
                 break;
             default:
@@ -645,7 +656,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         // 布局
         if (i != 0) {
             UIView * verticalLine = [[UIView alloc] initWithFrame:CGRectZero];
-            verticalLine.backgroundColor = [UIColor colorWithRed:(0xee/255.0) green:(0xee/255.0) blue:(0xee/255.0) alpha:1];
+            verticalLine.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
             [button addSubview:verticalLine];
             [verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.bottom.left.mas_equalTo(0);
@@ -669,7 +680,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         
         lastButton = button;
     }
-    self.actionButtons = buttons;
+    _actionButtons = buttons;
 }
 
 
@@ -751,7 +762,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         _bottomView = [[UIView alloc] initWithFrame:CGRectZero];
         _bottomView.backgroundColor = [UIColor whiteColor];
         UIView * line = [[UIView alloc] initWithFrame:CGRectZero];
-        line.backgroundColor = [UIColor colorWithRed:(0xee/255.0) green:(0xee/255.0) blue:(0xee/255.0) alpha:1];
+        line.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
         [_bottomView addSubview:line];
         [line mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
