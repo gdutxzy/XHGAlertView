@@ -116,7 +116,7 @@
     //    customView.backgroundColor = [UIColor blueColor];
     //    customView.text = @"自定义内容视图";
         XHGAlertMenusView *customView = [XHGAlertMenusView alertMenusViewWithTitles:@[@"1.好",@"2.不好"] textViewPlaceholder:@"请输入简单理由"];
-        XHGAlertView * alert = [XHGAlertView alertWithTopImage:[UIImage imageNamed:@"default_wifi"] title:@"全样式弹窗" message:@"超长内容测试超长内容测试超长内容" customizeContentView:customView actions:@[cancleAction,confirmAction]] ;
+        XHGAlertView * alert = [XHGAlertView alertWithTopImage:[UIImage imageNamed:@"default_wifi"] title:@"全样式弹窗" message:@"超长内容测试超长内容测试超长内容" customizeContentView:customView actions:@[cancleAction,cancleAction,confirmAction]] ;
         [alert showSheet];
 }
 

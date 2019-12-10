@@ -555,11 +555,11 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         if (self.style == XHGViewStyleSheet) {
             if (i<self.actions.count-2) {
                 UIView * horizontalLine = [[UIView alloc] initWithFrame:CGRectZero];
-                horizontalLine.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
+                horizontalLine.backgroundColor = [UIColor colorWithRed:(0xf2/255.0) green:(0xf2/255.0) blue:(0xf2/255.0) alpha:1];
                 [button addSubview:horizontalLine];
                 [horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.bottom.left.mas_equalTo(0);
-                    make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
+                    make.right.bottom.left.mas_equalTo(0);
+                    make.height.mas_equalTo(1);
                 }];
             }
             if (i == self.actions.count-1) {
@@ -594,11 +594,11 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         }else{  // XHGViewStyleAlert
             if (i != 0) {
                 UIView * verticalLine = [[UIView alloc] initWithFrame:CGRectZero];
-                verticalLine.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
+                verticalLine.backgroundColor = [UIColor colorWithRed:(0xf2/255.0) green:(0xf2/255.0) blue:(0xf2/255.0) alpha:1];
                 [button addSubview:verticalLine];
                 [verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.top.bottom.left.mas_equalTo(0);
-                    make.width.mas_equalTo(1/[UIScreen mainScreen].scale);
+                    make.width.mas_equalTo(1);
                 }];
             }
             
@@ -704,10 +704,10 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         _bottomView = [[UIView alloc] initWithFrame:CGRectZero];
         _bottomView.backgroundColor = [UIColor whiteColor];
         UIView * line = [[UIView alloc] initWithFrame:CGRectZero];
-        line.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
+        line.backgroundColor = [UIColor colorWithRed:(0xf2/255.0) green:(0xf2/255.0) blue:(0xf2/255.0) alpha:1];
         [_bottomView addSubview:line];
         [line mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
+            make.height.mas_equalTo(1);
             make.top.left.right.mas_equalTo(0);
         }];
     }

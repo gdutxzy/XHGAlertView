@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'XHGAlertView'
-    s.version          = '1.3.1'
+    s.version          = '1.3.2'
     s.summary          = 'AlertView，for XHG, supports Custom view'
     
     # This description is used to generate tags and improve search results.
