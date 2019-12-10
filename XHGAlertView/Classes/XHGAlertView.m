@@ -21,6 +21,7 @@
 #define xhg_grayColor [UIColor colorWithRed:(0x99/255.0) green:(0x99/255.0) blue:(0x99/255.0) alpha:1]
 #define xhg_oceanColor [UIColor colorWithRed:(0x57/255.0) green:(0x6b/255.0) blue:(0x95/255.0) alpha:1]
 #define xhg_blackColor [UIColor colorWithRed:(0x30/255.0) green:(0x30/255.0) blue:(0x30/255.0) alpha:1]
+#define xhg_redColor [UIColor colorWithRed:(0xFE/255.0) green:(0x3B/255.0) blue:(0x30/255.0) alpha:1]
 
 
 @class  XHGAlertView;
@@ -521,8 +522,22 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
                 button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
             }
                 break;
+            case XHGAlertActionStyleBlack: {
+                [button setTitleColor:xhg_blackColor forState:UIControlStateNormal];
+            }
+                break;
+            case XHGAlertActionStyleRed: {
+                [button setTitleColor:xhg_redColor forState:UIControlStateNormal];
+            }
+                break;
             default:
                 break;
+        }
+        if (!self.actionButtonFont && self.style == XHGViewStyleSheet) {
+            self.actionButtonFont = [UIFont systemFontOfSize:18];
+        }
+        if (self.actionButtonFont) {
+            button.titleLabel.font = self.actionButtonFont;
         }
         [button setTitle:action.title forState:UIControlStateNormal];
         [button setXhg_clickBlock:^(UIButton *button) {
@@ -549,7 +564,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
             }
             if (i == self.actions.count-1) {
                 UIView * lineView = [[UIView alloc] initWithFrame:CGRectZero];
-                lineView.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
+                lineView.backgroundColor = [UIColor colorWithRed:(0xf2/255.0) green:(0xf2/255.0) blue:(0xf2/255.0) alpha:1];
                 [self.bottomView addSubview:lineView];
                 [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.top.mas_equalTo(height);

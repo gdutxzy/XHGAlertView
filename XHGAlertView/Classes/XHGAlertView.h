@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
     XHGAlertActionStyleCustom, ///< 自定义颜色
     XHGAlertActionStyleBoldOcean, ///<  粗体暗蓝色
     XHGAlertActionStyleBoldBlack, ///<  粗体黑色
+    XHGAlertActionStyleBlack, ///<  黑色
+    XHGAlertActionStyleRed, ///<  红色
 };
 
 typedef NS_ENUM(NSInteger, XHGViewStyle) {
@@ -130,6 +132,7 @@ typedef NS_ENUM(NSInteger, XHGViewStyle) {
 @property (nonatomic, strong, readonly) UIImageView * topImageView;
 
 @property (nonatomic, assign) CGFloat actionButtonHeight;
+@property (nonatomic, strong) UIFont *actionButtonFont;
 @property (nonatomic, strong, readonly) NSArray<XHGAlertAction*> *actions;
 @property (nonatomic, strong, readonly) NSArray<UIButton *> *actionButtons;
 
