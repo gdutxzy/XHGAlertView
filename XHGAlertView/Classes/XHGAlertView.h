@@ -19,6 +19,11 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
     XHGAlertActionStyleBoldBlack, ///<  粗体黑色
 };
 
+typedef NS_ENUM(NSInteger, XHGViewStyle) {
+    XHGViewStyleAlert,
+    XHGViewStyleSheet,
+};
+
 @class XHGAlertView;
 
 @interface XHGAlertAction : NSObject
@@ -55,7 +60,7 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 
 /**
- 样式完全自定义的弹窗
+ 样式完全自定义的弹窗，居中显示。无任何按钮，只有半透明黑色背景图。
  @param customView 自定义视图，self.customView = customView
  */
 + (instancetype)alertWithCustomView:(UIView *)customView;
@@ -114,7 +119,7 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 
 
-
+@property (nonatomic,assign) XHGViewStyle style;
 /// 自定义视图
 @property (nonatomic, weak, readonly) __kindof UIView *customView;
 @property (nonatomic, strong) UIImage *topImage;
@@ -124,6 +129,7 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 @property (nonatomic, strong, readonly) UILabel * messageLabel;
 @property (nonatomic, strong, readonly) UIImageView * topImageView;
 
+@property (nonatomic, assign) CGFloat actionButtonHeight;
 @property (nonatomic, strong, readonly) NSArray<XHGAlertAction*> *actions;
 @property (nonatomic, strong, readonly) NSArray<UIButton *> *actionButtons;
 
@@ -155,9 +161,11 @@ typedef NS_ENUM(NSInteger, XHGAlertActionStyle) {
 
 /**
  使显示，必须在主线程执行
+ alert样式
  */
 - (void)show;
-
+/// sheet样式
+- (void)showSheet;
 
 /**
  使消失，必须在主线程执行

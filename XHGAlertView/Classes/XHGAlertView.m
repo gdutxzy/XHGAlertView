@@ -47,165 +47,6 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 @end
 
 
-
-/****************************************************************************************************/
-//NSBundle *bundle = [NSBundle bundleForClass:[XHGAlertView class]];
-//NSBundle *imageBundle = [NSBundle bundleWithPath:[[bundle resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.bundle",[XHGAlertView class]]]];
-//[UIImage imageNamed:@"orange_circle_normal" inBundle:imageBundle compatibleWithTraitCollection:nil];
-//
-/**
- 选项按钮
- */
-//@interface XHGAlertMenuButton : UIButton
-//@property (nonatomic,weak) XHGAlertAction * menuAction;
-//@end
-//
-//@implementation XHGAlertMenuButton
-//- (CGRect)titleRectForContentRect:(CGRect)contentRect{
-//    CGRect rect = [super titleRectForContentRect:contentRect];
-//    rect.origin.x = 25;
-//    return rect;
-//}
-//- (CGRect)imageRectForContentRect:(CGRect)contentRect{
-//    CGRect rect = [super imageRectForContentRect:contentRect];
-//    rect.origin.x = contentRect.size.width - 49;
-//    return rect;
-//}
-//@end
-
-//**************************************************************************************************
-
-/**
- 选项按钮整合视图
- */
-//@interface XHGAlertMenusView : UIView
-//@property (nonatomic,weak) XHGAlertView * alertView;
-//@property (nonatomic,strong,readonly) NSArray<XHGAlertMenuButton *> *buttons;
-//@property (nonatomic,strong,readonly) NSArray<XHGAlertAction *> *actions;
-//@property (nonatomic,strong) XHGAlertAction * selectedAction;
-//
-//+ (instancetype)alertMenusViewWithActions:(NSArray<XHGAlertAction*> *)actions;
-//@end
-//
-//@implementation XHGAlertMenusView
-//+ (instancetype)alertMenusViewWithActions:(NSArray<XHGAlertAction *> *)actions{
-//    XHGAlertMenusView * menusView = [[XHGAlertMenusView alloc] init];
-//    if (menusView) {
-//        menusView->_actions = actions;
-//        [menusView setupView];
-//    }
-//    return menusView;
-//}
-//
-//- (void)setupView{
-//    NSMutableArray * buttons = [NSMutableArray arrayWithCapacity:self.actions.count];
-//    UIButton * lastButton = nil;
-//    NSBundle *bundle = [NSBundle bundleForClass:[XHGAlertView class]];
-//    NSBundle *imageBundle = [NSBundle bundleWithPath:[[bundle resourcePath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.bundle",[XHGAlertView class]]]];
-//
-//    for (NSInteger i = 0; i<self.actions.count; i++) {
-//        XHGAlertAction * action = self.actions[i];
-//        if (0 == action.tag) {
-//            action.tag = i;
-//        }
-//        // 生成
-//        XHGAlertMenuButton * button = [XHGAlertMenuButton buttonWithType:UIButtonTypeCustom];
-//        [button.titleLabel setFont:[UIFont systemFontOfSize:16]];
-//        button.menuAction = action;
-//        [self addSubview:button];
-//        switch (action.style) {
-//            case XHGAlertActionStyleGray: {
-//                [button setTitleColor:grayColor forState:UIControlStateNormal];
-//            }
-//                break;
-//            case XHGAlertActionStyleHighlight: {
-//                ;
-//                [button setTitleColor:highlightColor forState:UIControlStateNormal];
-//            }
-//                break;
-//            case XHGAlertActionStyleCustom: {
-//                [button setTitleColor:action.customTextColor forState:UIControlStateNormal];
-//            }
-//                break;
-//            default:
-//                break;
-//        }
-//
-//
-//        [button setTitle:action.title forState:UIControlStateNormal];
-//        [button setImage:[UIImage imageNamed:@"orange_circle_normal" inBundle:imageBundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-//        [button setImage:[UIImage imageNamed:@"orange_circle_select" inBundle:imageBundle compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
-//
-//        __weak typeof(self) weakself = self;
-//        [button setXhg_clickBlock:^(UIButton *button) {
-//            __strong typeof(weakself) self = weakself;
-//            [self menuButtonAction:button];
-//            if (action.handler) {
-//                action.handler(action,self.alertView);
-//            }
-//        }];
-//        [buttons addObject:button];
-//        if (0 == i) { // 默认选中第一项
-//            self.selectedAction = action;
-//            button.selected = YES;
-//        }
-//
-//
-//        // 布局
-//        if (lastButton){
-//            if (self.actions.count - 1 == i) {
-//                [button mas_makeConstraints:^(MASConstraintMaker *make) {
-//                    make.top.mas_equalTo(lastButton.mas_bottom).offset(0);
-//                    make.left.right.mas_equalTo(0);
-//                    make.bottom.mas_equalTo(0);
-//                    make.height.mas_equalTo(44);
-//                }];
-//            }else{
-//                [button mas_makeConstraints:^(MASConstraintMaker *make) {
-//                    make.top.mas_equalTo(lastButton.mas_bottom).offset(0);
-//                    make.left.right.mas_equalTo(0);
-//                    make.height.mas_equalTo(44);
-//                }];
-//            }
-//        }else{
-//            [button mas_makeConstraints:^(MASConstraintMaker *make) {
-//                make.left.top.right.mas_equalTo(0);
-//                make.height.mas_equalTo(44);
-//            }];
-//        }
-//        lastButton = button;
-//    }
-//    self->_buttons = buttons;
-//}
-//
-//- (void)menuButtonAction:(UIButton *)sender{
-//    for (XHGAlertMenuButton * button in self.buttons) {
-//        if (button == sender) {
-//            _selectedAction = button.menuAction;
-//            button.selected = YES;
-//        }else{
-//            button.selected = NO;
-//        }
-//    }
-//}
-//
-//
-//- (void)setSelectedAction:(XHGAlertAction *)selectedAction{
-//    _selectedAction = selectedAction;
-//    for (XHGAlertMenuButton * button in self.buttons) {
-//        if (selectedAction == button.menuAction) {
-//            button.selected = YES;
-//        }else{
-//            button.selected = NO;
-//        }
-//    }
-//}
-//@end
-//
-
-
-
-
 /****************************************************************************************************/
 
 /**
@@ -353,6 +194,10 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     return alert;
 }
 
+- (void)showSheet {
+    _style = XHGViewStyleSheet;
+    [self show];
+}
 - (void)show{
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -363,6 +208,8 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    [self setupBottomView];
+
     self.dismissing = NO;
     [self.layer removeAllAnimations];
     self.transform = CGAffineTransformIdentity;
@@ -398,7 +245,34 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         }
         [_widowsDic setObject:window forKey:[NSString stringWithFormat:@"%p",self]];
         self.alertBgWindow = window;
+    }
+
+    self.alertBgWindow.hidden = NO;
+    self.alertBgWindow.alpha = 0;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alertBgWindow.alpha = 1;
+    }];
+    
+    if (self.style == XHGViewStyleSheet) {
+        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_greaterThanOrEqualTo(60);
+            make.left.right.bottom.mas_equalTo(0);
+        }];
         
+        self.layer.cornerRadius = 0;
+        self.clipsToBounds = NO;
+        [self layoutIfNeeded];
+        CAShapeLayer* maskLayer = [CAShapeLayer layer];
+        UIBezierPath *b= [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight) cornerRadii:CGSizeMake(16, 16)];
+        maskLayer.path = b.CGPath;
+        self.layer.mask = maskLayer;
+        
+        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, self.bounds.size.height);
+        self.transform = transform;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.transform = CGAffineTransformIdentity;
+        }];
+    }else{
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(0);
             make.centerY.mas_equalTo(0);
@@ -407,20 +281,24 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
             make.left.mas_equalTo(35).priorityHigh();
             make.right.mas_equalTo(-35).priorityHigh();
         }];
+        
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+        animation.values = @[@0.4,@1.1,@0.96,@1.0];
+        animation.duration = 0.5;
+        animation.calculationMode = kCAAnimationCubic;
+        [self.layer addAnimation:animation forKey:nil];
     }
-
-    self.alertBgWindow.hidden = NO;
-    self.alertBgWindow.alpha = 0;
-    [UIView animateWithDuration:0.3 animations:^{
-        self.alertBgWindow.alpha = 1;
-    }];
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    animation.values = @[@0.4,@1.1,@0.96,@1.0];
-    animation.duration = 0.5;
-    animation.calculationMode = kCAAnimationCubic;
-    [self.layer addAnimation:animation forKey:nil];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    if (self.style == XHGViewStyleSheet) {
+        CAShapeLayer* maskLayer = [CAShapeLayer layer];
+        UIBezierPath *b= [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight) cornerRadii:CGSizeMake(16, 16)];
+        maskLayer.path = b.CGPath;
+        self.layer.mask = maskLayer;
+    }
+}
 
 - (void)dismiss{
     [[NSNotificationCenter defaultCenter] removeObserver:self];//避免键盘通知错误影响当前显示
@@ -430,13 +308,18 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     self.alpha = 1;
 
     [UIView animateWithDuration:0.3 animations:^{
-        self.alertBgWindow.alpha = 0;
         CGAffineTransform transform = CGAffineTransformMakeScale(0.1,0.1);
+        if (self.style == XHGViewStyleSheet) {
+            transform = CGAffineTransformMakeTranslation(0, self.bounds.size.height);
+            self.alertBgWindow.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+        }else{
+            self.alertBgWindow.alpha = 0;
+            self.alpha = 0;
+        }
 //        CGAffineTransformMakeTranslation(0,[UIScreen mainScreen].bounds.size.height/2+30);
 //        transform = CGAffineTransformScale(transform,0.1,0.1);
 //        transform = CGAffineTransformRotate(transform,3.14);
         self.transform = transform;
-        self.alpha = 0;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
         self.alertBgWindow.hidden = YES;
@@ -466,12 +349,8 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 
 
-
-
-
-
-
 - (void)setupView {
+    __weak typeof(self) weakself = self;
     self.backgroundColor = [UIColor whiteColor];
     self.layer.cornerRadius = 10;
     self.clipsToBounds = YES;
@@ -481,18 +360,16 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
     [self addSubview:self.bottomView];
     
     [self setupScrollContentView];
-    [self setupBottomView];
-
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.mas_equalTo(0);
         make.height.mas_equalTo(44);
     }];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        __strong typeof(weakself) self = weakself;
         make.left.top.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(-44);
+        make.bottom.mas_equalTo(self.bottomView.mas_top).offset(0);
     }];
-    __weak typeof(self) weakself = self;
     [self.scrollContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         __strong typeof(weakself) self = weakself;
         make.left.top.right.bottom.mas_equalTo(0);
@@ -603,8 +480,14 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 
 - (void)setupBottomView {
+    __weak typeof(self) weakself = self;
     NSMutableArray * buttons = [NSMutableArray arrayWithCapacity:self.actions.count];
     UIButton * lastButton = nil;
+    CGFloat height = 0;
+    CGFloat sheetButtonHeight = self.style==XHGViewStyleSheet ? 54:44;
+    if (self.actionButtonHeight > 0) {
+        sheetButtonHeight = self.actionButtonHeight;
+    }
     for (NSInteger i = 0; i<self.actions.count; i++) {
         XHGAlertAction * action = self.actions[i];
         if (0 == action.tag) {
@@ -641,7 +524,6 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
                 break;
         }
         [button setTitle:action.title forState:UIControlStateNormal];
-        __weak typeof(self) weakself = self;
         [button setXhg_clickBlock:^(UIButton *button) {
             __strong typeof(weakself) self = weakself;
             if (action.handler) {
@@ -654,35 +536,79 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         [buttons addObject:button];
         
         // 布局
-        if (i != 0) {
-            UIView * verticalLine = [[UIView alloc] initWithFrame:CGRectZero];
-            verticalLine.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
-            [button addSubview:verticalLine];
-            [verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.bottom.left.mas_equalTo(0);
-                make.width.mas_equalTo(1/[UIScreen mainScreen].scale);
-            }];
-        }
-        
-        
-        if (lastButton) {
-            [button mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.bottom.mas_equalTo(0);
-                make.left.mas_equalTo(lastButton.mas_right).offset(0);
-                make.width.mas_equalTo(self.bottomView.mas_width).dividedBy(self.actions.count);
-            }];
-        }else{
-            [button mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.left.bottom.mas_equalTo(0);
-                make.width.mas_equalTo(self.bottomView.mas_width).dividedBy(self.actions.count);
-            }];
+        if (self.style == XHGViewStyleSheet) {
+            if (i<self.actions.count-2) {
+                UIView * horizontalLine = [[UIView alloc] initWithFrame:CGRectZero];
+                horizontalLine.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
+                [button addSubview:horizontalLine];
+                [horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.bottom.left.mas_equalTo(0);
+                    make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
+                }];
+            }
+            if (i == self.actions.count-1) {
+                UIView * lineView = [[UIView alloc] initWithFrame:CGRectZero];
+                lineView.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
+                [self.bottomView addSubview:lineView];
+                [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(height);
+                    make.right.left.mas_equalTo(0);
+                    make.height.mas_equalTo(8);
+                }];
+                height +=8;
+                [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(height);
+                    make.left.right.mas_equalTo(0);
+                    make.height.mas_equalTo(sheetButtonHeight);
+                }];
+                height += sheetButtonHeight;
+                if (@available(iOS 11.0, *)) {
+                    CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;
+                    height += a*0.5;
+                }
+            }else{
+                [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(height);
+                    make.left.right.mas_equalTo(0);
+                    make.height.mas_equalTo(sheetButtonHeight);
+                }];
+                height += sheetButtonHeight;
+            }
+            
+        }else{  // XHGViewStyleAlert
+            if (i != 0) {
+                UIView * verticalLine = [[UIView alloc] initWithFrame:CGRectZero];
+                verticalLine.backgroundColor = [UIColor colorWithRed:(0xe2/255.0) green:(0xe2/255.0) blue:(0xe2/255.0) alpha:1];
+                [button addSubview:verticalLine];
+                [verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.bottom.left.mas_equalTo(0);
+                    make.width.mas_equalTo(1/[UIScreen mainScreen].scale);
+                }];
+            }
+            
+            if (lastButton) {
+                [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.bottom.mas_equalTo(0);
+                    make.left.mas_equalTo(lastButton.mas_right).offset(0);
+                    make.width.mas_equalTo(self.bottomView.mas_width).dividedBy(self.actions.count);
+                }];
+            }else{
+                [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.left.bottom.mas_equalTo(0);
+                    make.width.mas_equalTo(self.bottomView.mas_width).dividedBy(self.actions.count);
+                }];
+            }
+            height = sheetButtonHeight;
         }
         
         lastButton = button;
     }
+    
+    [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
     _actionButtons = buttons;
 }
-
 
 #pragma mark - 键盘通知
 - (void)keyboardWillShow:(NSNotification *)noti {

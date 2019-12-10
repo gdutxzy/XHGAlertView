@@ -27,11 +27,13 @@
     self.textView.placeholder = @"请输入简单的原因";
 
 }
+
+
 - (IBAction)allShow:(UIButton *)sender {
     NSLog(@">>>>>%@",[UIScreen mainScreen]);
     
-    XHGAlertAction * cancleAction = [XHGAlertAction actionWithTitle:@"取消" style:XHGAlertActionStyleGray handler:nil];
-    XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleHighlight handler:^(XHGAlertAction *action, XHGAlertView *alertView) {
+    XHGAlertAction * cancleAction = [XHGAlertAction actionWithTitle:@"取消" style:XHGAlertActionStyleBoldBlack handler:nil];
+    XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleBoldOcean handler:^(XHGAlertAction *action, XHGAlertView *alertView) {
         XHGAlertMenusView *customView = alertView.customView;
         NSLog(@">>>>>>textViewContent:%@",customView.textView.text);
     }];
@@ -100,6 +102,22 @@
 
 - (void)customViewButtonClick:(UIButton *)button{
     button.backgroundColor = [UIColor colorWithRed:(arc4random()%256/255.0) green:(arc4random()%256/255.0) blue:(arc4random()%256/255.0) alpha:1];
+}
+
+
+
+- (IBAction)showSheetView:(UIButton *)sender {
+    XHGAlertAction * cancleAction = [XHGAlertAction actionWithTitle:@"取消" style:XHGAlertActionStyleBoldBlack handler:nil];
+        XHGAlertAction * confirmAction = [XHGAlertAction actionWithTitle:@"确认" style:XHGAlertActionStyleBoldOcean handler:^(XHGAlertAction *action, XHGAlertView *alertView) {
+            XHGAlertMenusView *customView = alertView.customView;
+            NSLog(@">>>>>>textViewContent:%@",customView.textView.text);
+        }];
+    //    UILabel *customView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 50)];
+    //    customView.backgroundColor = [UIColor blueColor];
+    //    customView.text = @"自定义内容视图";
+        XHGAlertMenusView *customView = [XHGAlertMenusView alertMenusViewWithTitles:@[@"1.好",@"2.不好"] textViewPlaceholder:@"请输入简单理由"];
+        XHGAlertView * alert = [XHGAlertView alertWithTopImage:[UIImage imageNamed:@"default_wifi"] title:@"全样式弹窗" message:@"超长内容测试超长内容测试超长内容" customizeContentView:customView actions:@[cancleAction,confirmAction]] ;
+        [alert showSheet];
 }
 
 - (void)didReceiveMemoryWarning {
