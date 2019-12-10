@@ -495,6 +495,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         }
         // 生成
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.tag = action.tag;
         [button.titleLabel setFont:[UIFont systemFontOfSize:16]];
         [self.bottomView addSubview:button];
         switch (action.style) {
