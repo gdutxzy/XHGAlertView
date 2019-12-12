@@ -482,6 +482,9 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 - (void)setupBottomView {
     __weak typeof(self) weakself = self;
+    if (_actionButtons) {
+        return;
+    }
     NSMutableArray * buttons = [NSMutableArray arrayWithCapacity:self.actions.count];
     UIButton * lastButton = nil;
     CGFloat height = 0;
