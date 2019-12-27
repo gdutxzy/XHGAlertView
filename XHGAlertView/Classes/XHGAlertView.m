@@ -197,6 +197,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 - (void)showSheet {
     _style = XHGViewStyleSheet;
+    _dismissByTapSpace = YES;
     [self show];
 }
 - (void)show{
@@ -518,11 +519,13 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
             case XHGAlertActionStyleBoldOcean: {
                 [button setTitleColor:xhg_oceanColor forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+                _titleLabel.font = [UIFont boldSystemFontOfSize:18];
             }
                 break;
             case XHGAlertActionStyleBoldBlack: {
                 [button setTitleColor:xhg_blackColor forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+                _titleLabel.font = [UIFont boldSystemFontOfSize:18];
             }
                 break;
             case XHGAlertActionStyleBlack: {
