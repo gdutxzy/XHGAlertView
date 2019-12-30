@@ -175,6 +175,7 @@ typedef NS_ENUM(NSInteger, XHGViewStyle) {
  */
 - (void)dismiss;
 
+@property (copy,nonatomic) void(^didDismiss)(void);
 @end
 
 

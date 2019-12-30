@@ -335,6 +335,9 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 //        transform = CGAffineTransformRotate(transform,3.14);
         self.transform = transform;
     } completion:^(BOOL finished) {
+        if (self.didDismiss) {
+            self.didDismiss();
+        }
         [self removeFromSuperview];
         self.alertBgWindow.hidden = YES;
         [_widowsDic removeObjectForKey:[NSString stringWithFormat:@"%p",self]];
