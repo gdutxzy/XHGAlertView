@@ -198,8 +198,20 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 - (void)showSheet {
     _style = XHGViewStyleSheet;
     _dismissByTapSpace = YES;
+    if (!_titleLabel && !_topImageView && !_customView && _messageLabel && _messageLabel.superview) {
+        self.backgroundColor = [UIColor colorWithRed:(0xfb/255.0) green:(0xfb/255.0) blue:(0xfb/255.0) alpha:1];
+        self.scrollContentView.backgroundColor = [UIColor colorWithRed:(0xfb/255.0) green:(0xfb/255.0) blue:(0xfb/255.0) alpha:1];
+        _messageLabel.font = [UIFont systemFontOfSize:14];
+        [_messageLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(12);
+            make.right.mas_equalTo(-12);
+            make.top.mas_equalTo(21);
+            make.bottom.mas_equalTo(-18);
+        }];
+    }
     [self show];
 }
+
 - (void)show{
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
