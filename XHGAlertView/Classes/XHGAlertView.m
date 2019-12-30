@@ -520,12 +520,18 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
                 [button setTitleColor:xhg_oceanColor forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
                 _titleLabel.font = [UIFont boldSystemFontOfSize:18];
+                if (self.actionButtonHeight == 0) {
+                    sheetButtonHeight = 54;
+                }
             }
                 break;
             case XHGAlertActionStyleBoldBlack: {
                 [button setTitleColor:xhg_blackColor forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont boldSystemFontOfSize:18];
                 _titleLabel.font = [UIFont boldSystemFontOfSize:18];
+                if (self.actionButtonHeight == 0) {
+                    sheetButtonHeight = 54;
+                }
             }
                 break;
             case XHGAlertActionStyleBlack: {
@@ -759,7 +765,8 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
     UIView * view = [super hitTest:point withEvent:event];
-    if ([view isKindOfClass:[UITextView class]] || [view isKindOfClass:[UITextField class]]) {
+    if ([view isKindOfClass:[UITextView class]] || [view isKindOfClass:[UITextField class]] || ([view respondsToSelector:@selector(hasText)] && [view respondsToSelector:@selector(insertText:)] &&[view respondsToSelector:@selector(deleteBackward)])
+        ) { // 为输入框，或者符合输入协议时
         self.inputView = view;
     }else{
         [self endEditing:YES];
