@@ -351,8 +351,9 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         }
     }];
     if (_alertArray.count < 2) {
+        [_alertArray.lastObject.alertBgWindow makeKeyWindow];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
+            [[UIApplication sharedApplication].delegate.window makeKeyWindow];
         });
     }
 }
