@@ -350,6 +350,11 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
             [alertLast show];
         }
     }];
+    if (_alertArray.count < 2) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
+        });
+    }
 }
 
 
