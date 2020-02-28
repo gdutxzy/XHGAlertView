@@ -92,6 +92,8 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
 @property (nonatomic,assign) BOOL dismissing;
 
 @property (nonatomic,weak) UIView *inputView;
+
+@property (nonatomic,assign) NSInteger dismissIndex;
 @end
 
 
@@ -336,7 +338,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         self.transform = transform;
     } completion:^(BOOL finished) {
         if (self.didDismiss) {
-            self.didDismiss();
+            self.didDismiss(self.dismissIndex);
         }
         [self removeFromSuperview];
         self.alertBgWindow.hidden = YES;
@@ -578,6 +580,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
             if (action.handler) {
                 action.handler(action,self);
             }
+            self.dismissIndex = button.tag;
             if (self.autoDismiss) {
                 [self dismiss];
             }
@@ -793,6 +796,7 @@ static NSMutableArray<XHGAlertView *> *_alertArray;
         [self endEditing:YES];
     }
     if (!view && self.dismissByTapSpace && self.autoDismiss) {
+        self.dismissIndex = NSNotFound;
         [self dismiss];
     }
     return view;

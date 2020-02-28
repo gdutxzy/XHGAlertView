@@ -175,7 +175,8 @@ typedef NS_ENUM(NSInteger, XHGViewStyle) {
  */
 - (void)dismiss;
 
-@property (copy,nonatomic) void(^didDismiss)(void);
+///  已经消失回调。 index 即为对应按钮的tag，当为NSNotFound时，即为点击空白处消失。
+@property (copy,nonatomic) void(^didDismiss)(NSInteger index);
 @end
 
 
