@@ -6,7 +6,13 @@
 [![Platform](https://img.shields.io/cocoapods/p/XHGAlertView.svg?style=flat)](https://cocoapods.org/pods/XHGAlertView)
 
 ## Features
-AlertView SheetView 弹框 1、仿照UIAlertController的初始化API。 2、当内容高度超出屏幕时，内容可滚动。 3、当多个弹窗同时出现时，采用LIFO机制（后进先出。先展示最后一个加入的AlertView，当其消失时，继续展示最后一个）。 5、支持Alert、Sheet样式，能展示的内容包括 标题图片、标题、内容、选项框、底部操作按钮。6、支持自定义视图含有输入框的情况，可自动调节位置不被键盘遮挡。7、采用keywindow模式显示，弹出时会自动收起已有键盘。消失时会恢复键盘。
+AlertView SheetView 弹框 
+1、仿照UIAlertController的初始化API。
+2、当内容高度超出屏幕时，内容可滚动。 
+3、当多个弹窗同时出现时，采用LIFO机制（后进先出。先展示最后一个加入的AlertView，当其消失时，继续展示最后一个）。 
+4、支持Alert、Sheet样式，能展示的内容包括 标题图片、标题、内容、选项框、底部操作按钮。以及自定义视图。
+5、支持自定义视图含有输入框的情况，可自动调节位置不被键盘遮挡。
+6、采用keywindow模式显示，弹出时会自动收起已有键盘。消失时会恢复键盘。
 
 ## Example
 
